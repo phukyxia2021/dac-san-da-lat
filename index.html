@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đặc sản Đà Lạt – Tinh Hoa Nông Sản, Hồng Treo Gió, Atiso &amp; Quà Biếu Chính Gốc</title>
+  <meta
+    name="description"
+    content="Mua đặc sản Đà Lạt chính gốc: Hồng treo gió công nghệ Nhật, Cao mềm Atiso, Cà phê Arabica Cầu Đất, Dâu tây tươi, Bột rau củ sấy lạnh và Set quà biếu sang trọng. Giao hàng toàn quốc, đổi trả 7 ngày."
+  />
+  <meta property="og:title" content="Đặc sản Đà Lạt – Tinh Hoa Nông Sản &amp; Quà Biếu Phố Núi" />
+  <meta
+    property="og:description"
+    content="100% Đặc sản chính gốc Đà Lạt – Lâm Đồng: Hồng treo gió, Cao Atiso, Đông trùng hạ thảo, Cà phê Cầu Đất, Set quà Tết doanh nghiệp. Freeship đơn từ 499.000₫."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/logo/logo_dac_san_da_lat.jpg" />
+  <link rel="icon" type="image/jpeg" href="images/logo/logo_dac_san_da_lat.jpg" />
+
+  <!-- Google Fonts: Playfair Display & Inter (subset Vietnamese) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+
+  <!-- Dữ liệu có cấu trúc Organization (SEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Đặc sản Đà Lạt",
+      "url": "https://dacsandalat.vn",
+      "logo": "images/logo/logo_dac_san_da_lat.jpg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+84-363-087-855",
+        "contactType": "customer service",
+        "areaServed": "VN",
+        "availableLanguage": "Vietnamese"
+      }
+    }
+  </script>
+</head>
+<body data-page="home">
+  <!-- 1. Topbar & Sticky Header (Mount tự động qua js/ui/header.js) -->
+  <div id="site-header-mount"></div>
+
+  <main id="main-content">
+    <!-- 2. HERO SECTION (Bento Grid trên Desktop + Slider tự chạy/vuốt trên Mobile) -->
+    <section class="hero-section" id="hero-section" aria-label="Banner nổi bật theo mùa">
+      <div class="container">
+        <div class="hero-bento">
+          <!-- Slider lớn bên trái -->
+          <div class="hero-slider" id="hero-slider">
+            <!-- Slide 1: Mùa Hồng Treo Gió Đà Lạt (Ảnh đầu tiên ưu tiên LCP, không lazy-load) -->
+            <div class="hero-slide is-active">
+              <img
+                src="images/hong-treo-gio-da-lat.jpg"
+                alt="Mùa Hồng Treo Gió Đà Lạt Công Nghệ Nhật Bản"
+                width="800"
+                height="480"
+                fetchpriority="high"
+                class="hero-slide__bg"
+              />
+              <div class="hero-slide__overlay"></div>
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">🌲 Đặc sản Mùa Thu Đông Đà Lạt</span>
+                <h1 class="hero-slide__title">Mùa Hồng Treo Gió Đà Lạt Công Nghệ Nhật</h1>
+                <p class="hero-slide__desc">
+                  Ủ gió sương Cầu Đất suốt 30 ngày tự nhiên – vỏ hổ phách dẻo thơm, ruột tươm mật ngọt thanh, hoàn toàn không đường hóa học và không chất bảo quản.
+                </p>
+                <div class="hero-slide__actions">
+                  <a href="category.html?cat=dac-san-chu-luc" class="btn btn--primary btn--lg">
+                    Khám phá ngay
+                  </a>
+                  <a href="product.html?slug=hong-treo-gio-da-lat" class="btn btn--light btn--lg">
+                    Đặt Hồng Treo Gió
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Bộ Sưu Tập Quà Biếu Đà Lạt -->
+            <div class="hero-slide">
+              <img
+                src="images/qua-tet-xuan-binh-an.jpg"
+                alt="Bộ Sưu Tập Quà Biếu Đặc Sản Đà Lạt Sang Trọng"
+                width="800"
+                height="480"
+                loading="lazy"
+                class="hero-slide__bg"
+              />
+              <div class="hero-slide__overlay"></div>
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">🎁 Quà Biếu &amp; Quà Doanh Nghiệp</span>
+                <h2 class="hero-slide__title">Bộ Sưu Tập Quà Biếu Tinh Hoa Phố Núi</h2>
+                <p class="hero-slide__desc">
+                  Hộp quà thiết kế sang trọng theo ngân sách từ 390.000₫, hội tụ Hồng treo gió, Đông trùng hạ thảo, Cao Atiso &amp; Hạt Mắc ca. Hỗ trợ in logo doanh nghiệp.
+                </p>
+                <div class="hero-slide__actions">
+                  <a href="#gift-section" class="btn btn--primary btn--lg">
+                    Khám phá ngay
+                  </a>
+                  <a href="category.html?cat=qua-bieu" class="btn btn--light btn--lg">
+                    Xem các Set Quà
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Cao Atiso & Cà phê Arabica Cầu Đất -->
+            <div class="hero-slide">
+              <img
+                src="images/ca-phe-hat-nguyen-chat.jpg"
+                alt="Trà Atiso và Cà phê Arabica Cầu Đất Đà Lạt"
+                width="800"
+                height="480"
+                loading="lazy"
+                class="hero-slide__bg"
+              />
+              <div class="hero-slide__overlay"></div>
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">☕ Hương Vị Độ Cao 1.500m</span>
+                <h2 class="hero-slide__title">Atiso Thảo Dược &amp; Arabica Cầu Đất</h2>
+                <p class="hero-slide__desc">
+                  Thưởng thức vị thanh tao của Trà &amp; Cao mềm Atiso Lạc Dương cùng hương thơm quyến rũ của hạt cà phê Arabica Cầu Đất rang mộc nguyên bản.
+                </p>
+                <div class="hero-slide__actions">
+                  <a href="category.html?cat=atiso-thao-duoc" class="btn btn--primary btn--lg">
+                    Khám phá ngay
+                  </a>
+                  <a href="category.html?cat=tra-ca-phe" class="btn btn--light btn--lg">
+                    Trà &amp; Cà phê
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Điều hướng Slider -->
+            <div class="hero-slider__controls">
+              <button type="button" class="hero-slider__arrow" data-hero-nav="prev" aria-label="Slide trước">‹</button>
+              <button type="button" class="hero-slider__dot is-active" aria-label="Slide 1"></button>
+              <button type="button" class="hero-slider__dot" aria-label="Slide 2"></button>
+              <button type="button" class="hero-slider__dot" aria-label="Slide 3"></button>
+              <button type="button" class="hero-slider__arrow" data-hero-nav="next" aria-label="Slide tiếp">›</button>
+            </div>
+          </div>
+
+          <!-- 2 Banner phụ bên phải (Bento Grid) -->
+          <div class="hero-side">
+            <a href="category.html?cat=atiso-thao-duoc" class="hero-side-card">
+              <img
+                src="images/dong-trung-ha-thao-say-thang-hoa-10gr.jpg"
+                alt="Atiso và Đông Trùng Hạ Thảo Đà Lạt"
+                width="420"
+                height="220"
+                loading="lazy"
+                class="hero-side-card__img"
+              />
+              <div class="hero-side-card__overlay"></div>
+              <div class="hero-side-card__body">
+                <span class="badge badge--ocop" style="margin-bottom:6px;">Thảo dược quý</span>
+                <h3 class="hero-side-card__title">Cao Atiso &amp; Đông Trùng Hạ Thảo</h3>
+                <span class="hero-side-card__link">Món quà sức khỏe vàng →</span>
+              </div>
+            </a>
+
+            <a href="category.html?cat=bot-rau-cu" class="hero-side-card">
+              <img
+                src="images/bot-can-tay.jpg"
+                alt="Bột rau củ sấy lạnh nguyên chất Đà Lạt"
+                width="420"
+                height="220"
+                loading="lazy"
+                class="hero-side-card__img"
+              />
+              <div class="hero-side-card__overlay"></div>
+              <div class="hero-side-card__body">
+                <span class="badge badge--new" style="margin-bottom:6px;">Sấy lạnh 100%</span>
+                <h3 class="hero-side-card__title">Bột Rau Củ Sấy Lạnh Organic</h3>
+                <span class="hero-side-card__link">Cần tây, Rau má, Cải Kale →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THANH CAM KẾT CHẤT LƯỢNG (5 Trust Badges) -->
+    <section class="trust-bar" id="trust-bar-section" aria-label="Cam kết chất lượng">
+      <div class="container">
+        <div class="trust-bar__list">
+          <div class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title">100% Chính gốc Đà Lạt</div>
+              <div class="trust-item__sub">Thu hoạch từ nông trại Cầu Đất</div>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title">Chứng nhận OCOP / ATTP</div>
+              <div class="trust-item__sub">Kiểm định rõ ràng từng lô</div>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title">Không chất bảo quản</div>
+              <div class="trust-item__sub">Vị ngọt tự nhiên, an toàn</div>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title">Đổi trả trong 7 ngày</div>
+              <div class="trust-item__sub">Hoàn tiền 100% nếu không hài lòng</div>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__title">Giao hàng toàn quốc</div>
+              <div class="trust-item__sub">Freeship đơn từ 499.000₫</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FLASH SALE / ĐẶC SẢN THEO MÙA -->
+    <section class="section flash-sale-section" id="flash-sale-section" aria-labelledby="flash-sale-heading">
+      <div class="container">
+        <div class="flash-sale__header">
+          <div class="flash-sale__title-wrap">
+            <span class="flash-sale__badge">⚡ Flash Sale Mùa Vụ</span>
+            <h2 class="section__title" id="flash-sale-heading">Ưu Đãi Đặc Sản Hôm Nay</h2>
+            <div class="countdown" id="home-flash-countdown" aria-label="Thời gian còn lại của Flash Sale"></div>
+          </div>
+          <a href="category.html?sale=1" class="btn btn--outline btn--sm">
+            Xem tất cả ưu đãi →
+          </a>
+        </div>
+
+        <div class="flash-sale__scroller" id="home-flash-sale-grid"></div>
+      </div>
+    </section>
+
+    <!-- 5. KỆ SẢN PHẨM THEO 6 DANH MỤC CHUẨN -->
+    <section class="section" id="categories-showcase-section" aria-label="Kệ sản phẩm theo danh mục">
+      <div class="container">
+        <div class="section__header" style="margin-bottom:var(--space-4);">
+          <div>
+            <span class="section__subtitle">6 Nhóm Đặc Sản Tinh Hoa</span>
+            <h2 class="section__title">Khám Phá Đặc Sản Theo Danh Mục</h2>
+          </div>
+          <a href="category.html?all=1" class="section__link">Xem toàn bộ 119 sản phẩm →</a>
+        </div>
+
+        <!-- Thanh nhảy nhanh tới từng kệ danh mục -->
+        <nav class="cat-pills-nav" id="home-category-pills" aria-label="Chọn nhanh danh mục"></nav>
+
+        <!-- Các kệ danh mục được render từ dataService -->
+        <div id="home-category-shelves"></div>
+      </div>
+    </section>
+
+    <!-- 6. CHUYÊN MỤC "GỢI Ý QUÀ BIẾU ĐÀ LẠT" & QUÀ DOANH NGHIỆP -->
+    <section class="section gift-section" id="gift-section" aria-labelledby="gift-section-heading">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <span class="badge" style="background:rgba(212,175,55,0.2); color:#FDE68A; border:1px solid var(--color-gold); margin-bottom:var(--space-2);">
+              ✨ Thiết kế sang trọng · Đóng gói chỉn chu
+            </span>
+            <h2 class="section__title" id="gift-section-heading">Gợi ý Quà Biếu Đà Lạt</h2>
+            <p class="gift-section__intro">
+              Trao gửi tâm ý bằng những thức quà sức khỏe tinh túy từ cao nguyên Lâm Đồng. Phù hợp làm quà biếu Tết, lễ tri ân đối tác, khách hàng và người thân phương xa.
+            </p>
+          </div>
+          <a href="category.html?cat=qua-bieu" class="btn btn--light">
+            Xem tất cả Set Quà Biếu →
+          </a>
+        </div>
+
+        <!-- Gợi ý dịp tặng quà -->
+        <div class="gift-occasions" aria-label="Gợi ý dịp biếu tặng">
+          <span class="gift-occasion-tag">🧧 Quà Tết Đoàn Viên</span>
+          <span class="gift-occasion-tag">🤝 Quà Tri Ân Đối Tác &amp; Khách Hàng</span>
+          <span class="gift-occasion-tag">💐 Dịp Lễ 8/3 · 20/10 · 20/11</span>
+          <span class="gift-occasion-tag">✈️ Quà Du Lịch Đà Lạt Giao Tận Nhà</span>
+        </div>
+
+        <!-- 3 Thẻ Hộp quà theo mức ngân sách (~390k / ~490k / ~1.340k) -->
+        <div class="gift-tiers-grid" id="home-gift-tiers"></div>
+
+        <!-- Khối Quà Doanh Nghiệp (B2B) -->
+        <div class="b2b-box">
+          <div>
+            <span class="badge badge--bestseller" style="margin-bottom:var(--space-2);">Dịch vụ B2B Doanh Nghiệp</span>
+            <h3 style="font-size:clamp(1.35rem, 2.5vw, 1.85rem); color:#fff; margin-bottom:var(--space-3);">
+              Đặt Quà Số Lượng Lớn – Chiết Khấu Cao &amp; In Logo Thương Hiệu
+            </h3>
+            <p style="color:rgba(255,255,255,0.86); font-size:var(--fs-small);">
+              Chúng tôi đồng hành cùng hàng trăm doanh nghiệp thiết kế set quà đặc sản theo ngân sách riêng, xuất hóa đơn VAT đầy đủ và hỗ trợ giao hàng đến nhiều địa chỉ trên toàn quốc.
+            </p>
+            <div class="b2b-perks">
+              <span>✓ Miễn phí thiệp chúc mừng</span>
+              <span>✓ In logo ép kim doanh nghiệp</span>
+              <span>✓ Giao đa điểm toàn quốc</span>
+              <span>✓ Chiết khấu tới 25%</span>
+            </div>
+            <a
+              href="https://zalo.me/0363087855"
+              target="_blank"
+              rel="noopener"
+              class="btn btn--accent btn--lg"
+            >
+              💬 Nhận báo giá nhanh qua Zalo
+            </a>
+          </div>
+
+          <!-- Form rút gọn nhận báo giá B2B (Lưu vào LocalStorage `dld_b2b_leads`) -->
+          <form class="b2b-form" id="b2b-quote-form" novalidate>
+            <h4 style="font-family:var(--font-heading); font-size:1.2rem; color:var(--color-primary-dark);">
+              Yêu cầu Báo giá Quà Doanh Nghiệp
+            </h4>
+            <div class="b2b-form__row">
+              <div class="form-group">
+                <label class="form-label" for="b2b-company">Tên công ty / Người liên hệ <span class="form-label__req">*</span></label>
+                <input type="text" id="b2b-company" name="company" class="form-input" placeholder="VD: Công ty ABC / Anh Minh" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="b2b-phone">Số điện thoại Zalo <span class="form-label__req">*</span></label>
+                <input type="tel" inputmode="tel" id="b2b-phone" name="phone" class="form-input" placeholder="VD: 0363087855" required />
+              </div>
+            </div>
+            <div class="b2b-form__row">
+              <div class="form-group">
+                <label class="form-label" for="b2b-qty">Số lượng hộp dự kiến</label>
+                <select id="b2b-qty" name="quantity" class="form-select">
+                  <option value="10 - 30 hộp">10 – 30 hộp quà</option>
+                  <option value="30 - 100 hộp">30 – 100 hộp quà</option>
+                  <option value="Trên 100 hộp">Trên 100 hộp quà</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="b2b-budget">Ngân sách / Hộp</label>
+                <select id="b2b-budget" name="budget" class="form-select">
+                  <option value="300k - 500k">300.000₫ – 500.000₫</option>
+                  <option value="500k - 1 triệu">500.000₫ – 1.000.000₫</option>
+                  <option value="Trên 1 triệu">Trên 1.000.000₫ (VIP)</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">
+              Gửi yêu cầu nhận Catalogue &amp; Báo giá
+            </button>
+            <p id="b2b-form-feedback" style="font-size:var(--fs-xs); font-weight:600; min-height:18px;"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CÂU CHUYỆN THƯƠNG HIỆU (Storytelling + Timeline 4 bước + Con số nổi bật) -->
+    <section class="section" id="storytelling-section" aria-labelledby="story-heading">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-media">
+            <img
+              src="images/hong-deo-da-lat-nguyen-trai.jpg"
+              alt="Nông trại chế biến hồng treo gió Đà Lạt"
+              width="360"
+              height="450"
+              loading="lazy"
+              class="story-media__img"
+            />
+            <img
+              src="images/bong-atiso-tuoi.jpg"
+              alt="Vùng nguyên liệu Atiso và Nông sản Đà Lạt"
+              width="300"
+              height="380"
+              loading="lazy"
+              class="story-media__img"
+              style="margin-top:var(--space-6);"
+            />
+          </div>
+
+          <div>
+            <span class="section__subtitle">Câu chuyện Thương hiệu</span>
+            <h2 class="section__title" id="story-heading" style="margin-bottom:var(--space-4);">
+              Từ Nông Trại Cao Nguyên 1.500m Đến Bàn Ăn Gia Đình Việt
+            </h2>
+            <p style="color:var(--color-text-muted); margin-bottom:var(--space-3);">
+              Được thiên nhiên ưu ái lớp đất đỏ bazan màu mỡ cùng khí hậu ôn đới se lạnh quanh năm, <strong>Đà Lạt – Lâm Đồng</strong> là cái nôi của những thức quả, thảo dược có hương vị và hàm lượng dinh dưỡng đặc biệt nhất Việt Nam.
+            </p>
+            <p style="color:var(--color-text-muted); margin-bottom:var(--space-5);">
+              Chúng tôi liên kết trực tiếp cùng các nông hộ lâu năm tại Cầu Đất, Lạc Dương, Đơn Dương – áp dụng công nghệ treo gió Nhật Bản và sấy lạnh hiện đại để giữ trọn vẹn vị ngon mộc mạc, hoàn toàn nói không với hóa chất bảo quản.
+            </p>
+
+            <!-- Timeline 4 bước minh họa -->
+            <div class="story-timeline" aria-label="Quy trình 4 bước từ nông trại đến bàn ăn">
+              <div class="timeline-step">
+                <span class="timeline-step__num">1</span>
+                <div class="timeline-step__title">Thu hoạch</div>
+                <p class="timeline-step__desc">Hái tay nông sản chín tới tại vườn Đà Lạt vào sáng sớm.</p>
+              </div>
+              <div class="timeline-step">
+                <span class="timeline-step__num">2</span>
+                <div class="timeline-step__title">Chọn lọc</div>
+                <p class="timeline-step__desc">Tuyển chọn những trái lành lặn, đạt độ đường chuẩn loại 1.</p>
+              </div>
+              <div class="timeline-step">
+                <span class="timeline-step__num">3</span>
+                <div class="timeline-step__title">Chế biến sạch</div>
+                <p class="timeline-step__desc">Treo gió nhà kính &amp; sấy lạnh khép kín đạt chuẩn ATTP.</p>
+              </div>
+              <div class="timeline-step">
+                <span class="timeline-step__num">4</span>
+                <div class="timeline-step__title">Đóng gói &amp; Giao</div>
+                <p class="timeline-step__desc">Hút chân không 2 lớp, giao tận tay khách hàng toàn quốc.</p>
+              </div>
+            </div>
+
+            <!-- Con số nổi bật (kèm ghi chú [CẬP NHẬT] theo đặc tả) -->
+            <div class="story-counters">
+              <div>
+                <div class="story-counter__num">10+ Năm</div>
+                <div class="story-counter__label">Gắn bó nông sản [CẬP NHẬT]</div>
+              </div>
+              <div>
+                <div class="story-counter__num">45+ Vườn</div>
+                <div class="story-counter__label">Đối tác Cầu Đất [CẬP NHẬT]</div>
+              </div>
+              <div>
+                <div class="story-counter__num">50.000+</div>
+                <div class="story-counter__label">Khách hàng tin dùng [CẬP NHẬT]</div>
+              </div>
+            </div>
+
+            <a href="about.html" class="btn btn--outline">
+              Về chúng tôi &amp; Câu chuyện thương hiệu →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. GÓC CẨM NANG & ẨM THỰC ĐÀ LẠT (Blog) -->
+    <section class="section" id="blog-section" style="padding-top:0;" aria-labelledby="blog-heading">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <span class="section__subtitle">Kinh nghiệm &amp; Ẩm thực</span>
+            <h2 class="section__title" id="blog-heading">Góc Cẩm Nang Phố Núi Đà Lạt</h2>
+          </div>
+          <a href="blog.html" class="section__link">Xem tất cả bài viết →</a>
+        </div>
+
+        <div class="blog-grid" id="home-blog-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer đầy đủ (Mount tự động qua js/ui/header.js) -->
+  <div id="site-footer-mount"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

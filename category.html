@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh mục Đặc sản Đà Lạt – Bộ lọc thông minh &amp; Bảng giá mới nhất</title>
+  <meta
+    name="description"
+    content="Khám phá 6 danh mục Đặc sản Đà Lạt: Hồng treo gió, Đồ sấy, Cao Atiso, Thảo dược, Trà &amp; Cà phê Cầu Đất, Nông sản tươi, Bột rau củ sấy lạnh và Set Quà Biếu."
+  />
+  <meta property="og:title" content="Danh mục Đặc sản Đà Lạt Chính Gốc" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/logo/logo_dac_san_da_lat.jpg" />
+  <link rel="icon" type="image/jpeg" href="images/logo/logo_dac_san_da_lat.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-page="category">
+  <div id="site-header-mount"></div>
+
+  <main id="category-page-root" style="padding-bottom:var(--space-12);">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="index.html" class="breadcrumb__link">Trang chủ</a></li>
+          <li>›</li>
+          <li><a href="category.html" class="breadcrumb__link">Danh mục</a></li>
+          <li>›</li>
+          <li class="breadcrumb__current" id="category-breadcrumb-current" aria-current="page">
+            Tất cả sản phẩm
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Banner Tiêu đề & Mô tả ngắn danh mục -->
+      <div class="category-banner">
+        <h1 class="section__title" id="category-heading-title">Tất cả Đặc sản Đà Lạt Chính Gốc</h1>
+        <p id="category-heading-desc" style="color:var(--color-text-muted); max-width:75ch; font-size:var(--fs-small);">
+          Hơn 119 thức quà đặc sản Đà Lạt: Hồng treo gió, Cao Atiso, Trà &amp; Cà phê Cầu Đất, Nông sản tươi, Bột rau củ sấy lạnh và Set quà biếu.
+        </p>
+      </div>
+
+      <!-- Layout 2 cột: Cột trái Bộ lọc (Sticky trên Desktop / Bottom-Sheet trên Mobile) - Cột phải Lưới sản phẩm -->
+      <div class="category-layout">
+        <!-- Cột trái: Bộ lọc thông minh -->
+        <aside class="filter-sidebar" id="category-filter-sidebar" aria-label="Bộ lọc sản phẩm">
+          <div class="filter-sidebar__inner">
+            <div class="filter-sidebar__mobile-header">
+              <strong style="font-family:var(--font-heading); font-size:1.15rem;">Bộ lọc thông minh</strong>
+              <button type="button" class="icon-btn" data-action="close-mobile-filter" aria-label="Đóng bộ lọc">✕</button>
+            </div>
+
+            <form id="category-filter-form">
+              <!-- Nhóm 1: Danh mục (6 danh mục chuẩn) -->
+              <div class="filter-group">
+                <h2 class="filter-group__title">Danh mục Đặc sản</h2>
+                <div class="filter-options" id="filter-categories-list"></div>
+              </div>
+
+              <!-- Nhóm 2: Khoảng giá (Radio 1 lựa chọn) -->
+              <div class="filter-group">
+                <h2 class="filter-group__title">Khoảng giá</h2>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="radio" name="priceRange" value="" checked />
+                    <span>Tất cả mức giá</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="radio" name="priceRange" value="under-100k" />
+                    <span>Dưới 100.000₫</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="radio" name="priceRange" value="100k-300k" />
+                    <span>100.000₫ – 300.000₫</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="radio" name="priceRange" value="over-300k" />
+                    <span>Trên 300.000₫</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Nhóm 3: Nhu cầu (Checkbox nhiều lựa chọn) -->
+              <div class="filter-group">
+                <h2 class="filter-group__title">Theo Nhu cầu</h2>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" name="need" value="an-vat" />
+                    <span>Ăn vặt sạch tự nhiên</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" name="need" value="tot-suc-khoe" />
+                    <span>Tốt cho sức khỏe</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" name="need" value="qua-bieu" />
+                    <span>Quà biếu cao cấp</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Nhóm 4: Trọng lượng (Checkbox) -->
+              <div class="filter-group">
+                <h2 class="filter-group__title">Trọng lượng / Quy cách</h2>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="checkbox" name="weight" value="250" />
+                    <span>250g</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" name="weight" value="500" />
+                    <span>500g</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="checkbox" name="weight" value="1000" />
+                    <span>1kg</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Nhóm 5: Ưu đãi -->
+              <div class="filter-group">
+                <label class="filter-option" style="font-weight:600; color:var(--color-sale);">
+                  <input type="checkbox" name="onlySale" value="1" />
+                  <span>🔥 Chỉ hiện sản phẩm đang giảm giá</span>
+                </label>
+              </div>
+            </form>
+
+            <div class="filter-sidebar__mobile-footer">
+              <button type="button" class="btn btn--outline" data-action="clear-all-filters">
+                Xóa lọc
+              </button>
+              <button type="button" class="btn btn--primary" data-action="close-mobile-filter">
+                Áp dụng
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Cột phải: Toolbar Sắp xếp, Chip lọc đang áp dụng & Lưới sản phẩm -->
+        <div>
+          <div class="category-toolbar">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:var(--space-3);">
+              <button
+                type="button"
+                class="btn btn--outline btn--sm mobile-filter-trigger"
+                id="mobile-open-filter-btn"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span>Bộ lọc</span>
+              </button>
+              <span id="category-result-count" style="font-size:var(--fs-small); color:var(--color-text-muted);">
+                Đang tải sản phẩm...
+              </span>
+              <button
+                type="button"
+                class="btn btn--outline btn--sm"
+                id="category-toolbar-show-all-btn"
+                style="display:none;"
+              >
+                Xem tất cả
+              </button>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:8px;">
+              <label for="category-sort-select" style="font-size:var(--fs-xs); font-weight:600; color:var(--color-text-muted);">
+                Sắp xếp:
+              </label>
+              <select
+                id="category-sort-select"
+                class="form-select"
+                style="min-height:38px; padding:6px 12px; width:auto; font-size:var(--fs-small);"
+              >
+                <option value="bestseller">Bán chạy nhất</option>
+                <option value="price-asc">Giá thấp đến cao</option>
+                <option value="price-desc">Giá cao đến thấp</option>
+                <option value="newest">Mới nhất</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Chip bộ lọc đang áp dụng -->
+          <div class="active-filters" id="active-filters-bar" style="display:none;"></div>
+
+          <!-- Lưới sản phẩm -->
+          <div class="product-grid" id="category-products-grid"></div>
+
+          <!-- Trạng thái rỗng -->
+          <div id="category-empty-state" style="display:none;"></div>
+
+          <!-- Nút Xem thêm (Load 12 sản phẩm/lần) & Xem tất cả sản phẩm -->
+          <div id="category-load-more-wrap" style="text-align:center; margin-top:var(--space-8); display:none;">
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:var(--space-3);">
+              <button type="button" class="btn btn--outline btn--lg" id="category-load-more-btn">
+                Xem thêm 12 sản phẩm ↓
+              </button>
+              <button type="button" class="btn btn--primary btn--lg" id="category-show-all-btn">
+                Xem tất cả sản phẩm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

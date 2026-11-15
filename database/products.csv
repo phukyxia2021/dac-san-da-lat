@@ -1,0 +1,120 @@
+id	name	slug	category_id	price_vnd	original_price_vnd	price_display	is_contact_price	product_url	image_url
+1	Hồng treo gió Đà Lạt công nghệ Nhật (Thượng hạng)	hong-treo-gio-da-lat	1	170000	170000	170.000 ₫	FALSE	images/hong-treo-gio-da-lat.jpg	images/hong-treo-gio-da-lat.jpg
+2	Hồng treo gió Đà Lạt (Hộp 500gr)	hong-treo-gio-500gr	1	315000	315000	315.000 ₫	FALSE	images/hong-treo-gio-500gr.jpg	images/hong-treo-gio-500gr.jpg
+3	Hồng sấy dẻo Đà Lạt nguyên trái	hong-deo-da-lat-nguyen-trai	1	110000	110000	110.000 ₫	FALSE	images/hong-deo-da-lat-nguyen-trai.jpg	images/hong-deo-da-lat-nguyen-trai.jpg
+4	Hồng sấy dẻo Đà Lạt thái miếng	hong-say-deo-da-lat	1	105000	105000	105.000 ₫	FALSE	images/hong-say-deo-da-lat.jpg	images/hong-say-deo-da-lat.jpg
+5	Hồng kem treo gió Đà Lạt đặc biệt	hong-kem-treo-gio	1	300000	300000	300.000 ₫	FALSE	images/hong-kem-treo-gio.jpg	images/hong-kem-treo-gio.jpg
+6	Nước Yến Đông Trùng Hạ Thảo	nuoc-yen-dong-trung-ha-thao	2	450000	450000	450.000 ₫	FALSE	images/nuoc-yen-dong-trung-ha-thao.jpg	images/nuoc-yen-dong-trung-ha-thao.jpg
+7	Đông trùng Hạ Thảo sấy thăng hoa (10gr)	dong-trung-ha-thao-say-thang-hoa-10gr	1	490000	539000	490.000 ₫	FALSE	images/dong-trung-ha-thao-say-thang-hoa-10gr.jpg	images/dong-trung-ha-thao-say-thang-hoa-10gr.jpg
+8	Hạt Mắc ca Lâm Đồng nứt vỏ tự nhiên	hat-mac-ca-lam-dong	1	105000	105000	105.000 ₫	FALSE	images/hat-mac-ca-lam-dong.jpg	images/hat-mac-ca-lam-dong.jpg
+9	Bông Atiso tươi Đà Lạt loại 1	bong-atiso-tuoi	3	450000	450000	450.000 ₫	FALSE	images/bong-atiso-tuoi.jpg	images/bong-atiso-tuoi.jpg
+10	Bơ sáp Booth Đà Lạt già trái	bo-booth	3	110000	110000	110.000 ₫	FALSE	images/bo-booth.jpg	images/bo-booth.jpg
+11	Dâu tây Đà Lạt giống Nhật Bản	dau-tay-nhat-ban	3	120000	120000	120.000 ₫	FALSE	images/dau-tay-nhat-ban.jpg	images/dau-tay-nhat-ban.jpg
+12	Khoai lang mật sấy dẻo Đà Lạt (300gr)	khoai-lang-deo	1	90000	90000	90.000 ₫	FALSE	images/khoai-lang-deo.jpg	images/khoai-lang-deo.jpg
+13	Khoai lang mật sấy dẻo (250gr)	khoai-lang-say-deo-250gr	1	70000	70000	70.000 ₫	FALSE	images/khoai-lang-say-deo-250gr.jpg	images/khoai-lang-say-deo-250gr.jpg
+14	Chuối Laba sấy dẻo Đà Lạt	chuoi-laba-say-deo	1	75000	75000	75.000 ₫	FALSE	images/chuoi-laba-say-deo.jpg	images/chuoi-laba-say-deo.jpg
+15	Khoai lang sấy gừng mật ong ấm vị	khoai-lang-gung	1			Liên hệ	TRUE	images/khoai-lang-gung.jpg	images/khoai-lang-gung.jpg
+16	Hồng giòn Đà Lạt đầu mùa	hong-gion-da-lat	3	55000	55000	55.000 ₫	FALSE	images/hong-gion-da-lat.jpg	images/hong-gion-da-lat.jpg
+17	Dâu tằm sấy dẻo Đà Lạt	dau-tam-say-deo	1	80000	80000	80.000 ₫	FALSE	images/dau-tam-say-deo.jpg	images/dau-tam-say-deo.jpg
+18	Dâu tây sấy dẻo Đà Lạt nguyên trái	dau-tay-say-deo	1	95000	95000	95.000 ₫	FALSE	images/dau-tay-say-deo.jpg	images/dau-tay-say-deo.jpg
+19	Chanh dây sấy dẻo Đà Lạt	chanh-day-say-deo	1	80000	80000	80.000 ₫	FALSE	images/chanh-day-say-deo.jpg	images/chanh-day-say-deo.jpg
+20	Thơm sấy muối ớt dẻo cay	thom-say-muoi-ot	4	80000	80000	80.000 ₫	FALSE	images/thom-say-muoi-ot.jpg	images/thom-say-muoi-ot.jpg
+21	Thơm sấy dẻo gừng mật ong	thom-say-deo-gung-mat-ong	4	80000	80000	80.000 ₫	FALSE	images/thom-say-deo-gung-mat-ong.jpg	images/thom-say-deo-gung-mat-ong.jpg
+22	Hạt bí Nhật rang mộc giàu dinh dưỡng	hat-bi-nhat	4	180000	180000	180.000 ₫	FALSE	images/hat-bi-nhat.jpg	images/hat-bi-nhat.jpg
+23	Xoài sấy dẻo tự nhiên ít đường	xoai-say-deo	4	85000	85000	85.000 ₫	FALSE	images/xoai-say-deo.jpg	images/xoai-say-deo.jpg
+24	Táo sấy dẻo thanh ngọt	tao-say-deo	4	80000	80000	80.000 ₫	FALSE	images/tao-say-deo.jpg	images/tao-say-deo.jpg
+25	Hạt điều rang muối vỏ lụa loại A	hat-dieu-rang-muoi	4	85000	85000	85.000 ₫	FALSE	images/hat-dieu-rang-muoi.jpg	images/hat-dieu-rang-muoi.jpg
+26	Mãng cầu sấy dẻo chua ngọt tự nhiên	mang-cau-say-deo	4	80000	80000	80.000 ₫	FALSE	images/mang-cau-say-deo.jpg	images/mang-cau-say-deo.jpg
+27	Khoai lang vàng sấy sợi giòn rụm	khoai-lang-vang-say-soi	5	70000	70000	70.000 ₫	FALSE	images/khoai-lang-vang-say-soi.jpg	images/khoai-lang-vang-say-soi.jpg
+28	Trái cây sấy thập cẩm Đà Lạt (Mix 8 vị)	trai-cay-say-kho	5	70000	70000	70.000 ₫	FALSE	images/trai-cay-say-kho.jpg	images/trai-cay-say-kho.jpg
+29	Khoai lang tím sấy sợi giòn	khoai-lang-tim-say-soi	5	70000	70000	70.000 ₫	FALSE	images/khoai-lang-tim-say-soi.jpg	images/khoai-lang-tim-say-soi.jpg
+30	Khoai lang vàng sấy mật ong	khoai-lang-vang-say-mat-ong	5	65000	65000	65.000 ₫	FALSE	images/khoai-lang-vang-say-mat-ong.jpg	images/khoai-lang-vang-say-mat-ong.jpg
+31	Khoai lang tím sấy lát tẩm mật ong	khoai-lang-tim-say-mat-ong	5	65000	65000	65.000 ₫	FALSE	images/khoai-lang-tim-say-mat-ong.jpg	images/khoai-lang-tim-say-mat-ong.jpg
+32	Chuối Laba sấy giòn truyền thống	chuoi-say	5	60000	60000	60.000 ₫	FALSE	images/chuoi-say.jpg	images/chuoi-say.jpg
+33	Combo 4 chai Nước cốt trái cây Đà Lạt	combo-nuoc-cot-trai-cay	2	250000	300000	250.000 ₫	FALSE	images/combo-nuoc-cot-trai-cay.jpg	images/combo-nuoc-cot-trai-cay.jpg
+34	Mít Thái sấy giòn nguyên múi	mit-say	5	65000	65000	65.000 ₫	FALSE	images/mit-say.jpg	images/mit-say.jpg
+35	Khoai môn sấy giòn Đà Lạt	khoai-mon-say	5	85000	85000	85.000 ₫	FALSE	images/khoai-mon-say.jpg	images/khoai-mon-say.jpg
+36	Mứt gừng viên dẻo ấm cổ	mut-gung-vien	4	45000	45000	45.000 ₫	FALSE	images/mut-gung-vien.jpg	images/mut-gung-vien.jpg
+37	Mứt hoa Atiso đỏ (Hibiscus) giòn chua ngọt	mut-atiso-do-hibiscus	4	65000	65000	65.000 ₫	FALSE	images/mut-atiso-do-hibiscus.jpg	images/mut-atiso-do-hibiscus.jpg
+38	Kẹo dâu tây Đà Lạt dẻo thơm	keo-dau-tay	1	50000	50000	50.000 ₫	FALSE	images/keo-dau-tay.jpg	images/keo-dau-tay.jpg
+39	Kẹo dâu tằm Đà Lạt chua ngọt	keo-dau-tam	1	50000	50000	50.000 ₫	FALSE	images/keo-dau-tam.jpg	images/keo-dau-tam.jpg
+40	Kẹo me cay Đà Lạt	keo-me-cay	1	50000	50000	50.000 ₫	FALSE	images/keo-me-cay.jpg	images/keo-me-cay.jpg
+41	Kẹo nha đam sữa thanh mát	keo-nha-dam-sua	1	55000	55000	55.000 ₫	FALSE	images/keo-nha-dam-sua.jpg	images/keo-nha-dam-sua.jpg
+42	Kẹo dâu dẻo thập cẩm Đà Lạt	keo-dau-deo	1	55000	55000	55.000 ₫	FALSE	images/keo-dau-deo.jpg	images/keo-dau-deo.jpg
+43	Nước cốt hoa Atiso đỏ lên men tự nhiên	nuoc-cot-atiso-do	2	50000	50000	50.000 ₫	FALSE	images/nuoc-cot-atiso-do.jpg	images/nuoc-cot-atiso-do.jpg
+44	Nước cốt dâu tây Đà Lạt nguyên chất	nuoc-cot-dau-tay	2	50000	50000	50.000 ₫	FALSE	images/nuoc-cot-dau-tay.jpg	images/nuoc-cot-dau-tay.jpg
+45	Nước cốt dâu tằm Đà Lạt đậm đặc	nuoc-cot-dau-tam	2	50000	50000	50.000 ₫	FALSE	images/nuoc-cot-dau-tam.jpg	images/nuoc-cot-dau-tam.jpg
+46	Nước cốt chanh dây tím Đà Lạt	nuoc-cot-chanh-day	2	50000	50000	50.000 ₫	FALSE	images/nuoc-cot-chanh-day.jpg	images/nuoc-cot-chanh-day.jpg
+47	Hồng Đẳng Sâm ngâm Mật Ong rừng	hong-dang-sam-mat-ong-ngoc-linh	4	545000	545000	545.000 ₫	FALSE	images/hong-dang-sam-mat-ong-ngoc-linh.jpg	images/hong-dang-sam-mat-ong-ngoc-linh.jpg
+48	Dầu hạt Mắc ca ép lạnh nguyên chất	dau-hat-mac-ca	2	215000	215000	215.000 ₫	FALSE	images/dau-hat-mac-ca.jpg	images/dau-hat-mac-ca.jpg
+49	Tinh chất Phúc bồn tử đen cô đặc	tinh-chat-phuc-bon-tu-den	2	580000	680000	580.000 ₫	FALSE	images/tinh-chat-phuc-bon-tu-den.jpg	images/tinh-chat-phuc-bon-tu-den.jpg
+50	Cao mềm Atiso Đà Lạt nguyên chất	cao-atiso-da-lat	1	170000	170000	170.000 ₫	FALSE	images/cao-atiso-da-lat.jpg	images/cao-atiso-da-lat.jpg
+51	Cà phê Arabica Cầu Đất hạt rang mộc	ca-phe-hat-nguyen-chat	2	235000	235000	235.000 ₫	FALSE	images/ca-phe-hat-nguyen-chat.jpg	images/ca-phe-hat-nguyen-chat.jpg
+52	Cao nước Atiso Đà Lạt ống uống tiện lợi	cao-atiso-nuoc	1	65000	65000	65.000 ₫	FALSE	images/cao-atiso-nuoc.jpg	images/cao-atiso-nuoc.jpg
+53	Cà phê Đông Trùng Hạ Thảo phố núi	ca-phe-dong-trung-ha-thao	2	185000	185000	185.000 ₫	FALSE	images/ca-phe-dong-trung-ha-thao.jpg	images/ca-phe-dong-trung-ha-thao.jpg
+54	Cà phê rang xay nguyên chất Cầu Đất	ca-phe-nguyen-chat	2	115000	115000	115.000 ₫	FALSE	images/ca-phe-nguyen-chat.jpg	images/ca-phe-nguyen-chat.jpg
+55	Mứt dâu tây Đà Lạt phết bánh mì	mut-dau-tay	1	80000	80000	80.000 ₫	FALSE	images/mut-dau-tay.jpg	images/mut-dau-tay.jpg
+56	Mứt dâu tằm Đà Lạt truyền thống	mut-dau-tam	1	70000	70000	70.000 ₫	FALSE	images/mut-dau-tam.jpg	images/mut-dau-tam.jpg
+57	Trà Bồ công anh Đà Lạt thanh nhiệt	tra-bo-cong-anh	2	70000	70000	70.000 ₫	FALSE	images/tra-bo-cong-anh.jpg	images/tra-bo-cong-anh.jpg
+58	Trà Atiso Đà Lạt túi lọc thượng hạng	tra-atiso-tui-loc	2	80000	80000	80.000 ₫	FALSE	images/tra-atiso-tui-loc.jpg	images/tra-atiso-tui-loc.jpg
+59	Trà hoa Atiso đỏ (Hibiscus) sấy khô	tra-atiso-do	2	85000	85000	85.000 ₫	FALSE	images/tra-atiso-do.jpg	images/tra-atiso-do.jpg
+60	Bông Atiso sấy khô Đà Lạt nguyên cánh	bong-atiso-kho	1	235000	235000	235.000 ₫	FALSE	images/bong-atiso-kho.jpg	images/bong-atiso-kho.jpg
+61	Phấn hoa rừng thiên nhiên Đà Lạt	phan-hoa-thien-nhien	1	170000	170000	170.000 ₫	FALSE	images/phan-hoa-thien-nhien.jpg	images/phan-hoa-thien-nhien.jpg
+62	Mật ong hoa cà phê thiên nhiên nguyên chất	mat-ong-thien-nhien	2	240000	240000	240.000 ₫	FALSE	images/mat-ong-thien-nhien.jpg	images/mat-ong-thien-nhien.jpg
+63	Sữa ong chúa tươi Lâm Đồng	sua-ong-chua-tuoi	1	145000	145000	145.000 ₫	FALSE	images/sua-ong-chua-tuoi.jpg	images/sua-ong-chua-tuoi.jpg
+64	Tinh chất gừng sẻ ngâm mật ong	tinh-chat-gung-mat-ong	2	210000	210000	210.000 ₫	FALSE	images/tinh-chat-gung-mat-ong.jpg	images/tinh-chat-gung-mat-ong.jpg
+65	Vải thiều sấy khô nguyên vỏ	vai-thieu-say-kho	4			Liên hệ	TRUE	images/vai-thieu-say-kho.jpg	images/vai-thieu-say-kho.jpg
+66	Tảo xoắn Spirulina ngâm mật ong	tao-xoan-spirulina-mat-ong	2	299000	299000	299.000 ₫	FALSE	images/tao-xoan-spirulina-mat-ong.jpg	images/tao-xoan-spirulina-mat-ong.jpg
+67	Sinh tố hoa Atiso đỏ Đà Lạt	sinh-to-atiso-do	2			Liên hệ	TRUE	images/sinh-to-atiso-do.jpg	images/sinh-to-atiso-do.jpg
+68	Hạt dẻ rừng rang bơ (Túi 2kg)	hat-de-rung	1			Liên hệ	TRUE	images/hat-de-rung.jpg	images/hat-de-rung.jpg
+69	Rượu Đông Trùng Hạ Thảo thượng hạng	ruou-dong-trung-ha-thao	2	1050000	1050000	1.050.000 ₫	FALSE	images/ruou-dong-trung-ha-thao.jpg	images/ruou-dong-trung-ha-thao.jpg
+70	Dâu tây Đà Lạt má đá tươi sạch	dau-tay-da-lat	3			Liên hệ	TRUE	images/dau-tay-da-lat.jpg	images/dau-tay-da-lat.jpg
+71	Chậu Dâu tây Đà Lạt đang sẵn trái	chau-dau-tay-da-lat	3			Liên hệ	TRUE	images/chau-dau-tay-da-lat.jpg	images/chau-dau-tay-da-lat.jpg
+72	Dâu tằm tươi Đà Lạt mọng nước	dau-tam-da-lat	3	80000	80000	80.000 ₫	FALSE	images/dau-tam-da-lat.jpg	images/dau-tam-da-lat.jpg
+73	Cam Cara ruột đỏ giống Úc trồng tại Đà Lạt	cam-cara-ruot-do-giong-uc	3	120000	120000	120.000 ₫	FALSE	images/cam-cara-ruot-do-giong-uc.jpg	images/cam-cara-ruot-do-giong-uc.jpg
+74	Bơ 034 Đà Lạt dẻo béo loại 1	bo-034-da-lat	3			Liên hệ	TRUE	images/bo-034-da-lat.jpg	images/bo-034-da-lat.jpg
+75	Chanh dây ngọt Colombia trồng tại Đà Lạt	chanh-day-ngot-colombia	3	280000	360000	280.000 ₫	FALSE	images/chanh-day-ngot-colombia.jpg	images/chanh-day-ngot-colombia.jpg
+76	Cà chua thân gỗ (Tamarillo) Đà Lạt	ca-chua-than-go	3	150000	150000	150.000 ₫	FALSE	images/ca-chua-than-go.jpg	images/ca-chua-than-go.jpg
+77	Quả Sung Mỹ tươi canh tác hữu cơ	qua-sung-my	3	360000	360000	360.000 ₫	FALSE	images/qua-sung-my.jpg	images/qua-sung-my.jpg
+78	Khoai lang mật Đà Lạt tươi dẻo tươm mật	khoai-lang-mat	3	55000	55000	55.000 ₫	FALSE	images/khoai-lang-mat.jpg	images/khoai-lang-mat.jpg
+79	Chuối Laba Đà Lạt tươi tiến vua	chuoi-laba-tuoi	3	30000	30000	30.000 ₫	FALSE	images/chuoi-laba-tuoi.jpg	images/chuoi-laba-tuoi.jpg
+80	Phúc bồn tử đỏ tươi Đà Lạt	phuc-bon-tu-do	3	450000	450000	450.000 ₫	FALSE	images/phuc-bon-tu-do.jpg	images/phuc-bon-tu-do.jpg
+81	Phúc bồn tử đen tươi Đà Lạt	phuc-bon-tu-den	3	400000	400000	400.000 ₫	FALSE	images/phuc-bon-tu-den.jpg	images/phuc-bon-tu-den.jpg
+82	Quả Tầm bóp Nam Mỹ (Thù lù) Đà Lạt	qua-tam-bop	3	320000	320000	320.000 ₫	FALSE	images/qua-tam-bop.jpg	images/qua-tam-bop.jpg
+83	Hồng giòn Chín Nên Đà Lạt không hạt	hong-gion-chin-nen	3			Liên hệ	TRUE	images/hong-gion-chin-nen.jpg	images/hong-gion-chin-nen.jpg
+84	Cà chua Baby Đà Lạt ngọt thanh	ca-chua-baby-da-lat	3	90000	90000	90.000 ₫	FALSE	images/ca-chua-baby-da-lat.jpg	images/ca-chua-baby-da-lat.jpg
+85	Chanh dây tím ngọt Đà Lạt	chanh-day-tim-ngot	3	150000	180000	150.000 ₫	FALSE	images/chanh-day-tim-ngot.jpg	images/chanh-day-tim-ngot.jpg
+86	Dưa lê Pháp trồng nhà kính Đà Lạt	dua-le-phap	3			Liên hệ	TRUE	images/dua-le-phap.jpg	images/dua-le-phap.jpg
+87	Sâm đất Đà Lạt (Yacon) giòn ngọt mát	sam-dat-da-lat-sam-dat-yacon	3			Liên hệ	TRUE	images/sam-dat-da-lat-sam-dat-yacon.jpg	images/sam-dat-da-lat-sam-dat-yacon.jpg
+88	Hồng giòn trứng đá Đà Lạt	hong-gion-trung-da	3	75000	75000	75.000 ₫	FALSE	images/hong-gion-trung-da.jpg	images/hong-gion-trung-da.jpg
+89	Dâu tây Mỹ Albion Đà Lạt	dau-my-albion	3			Liên hệ	TRUE	images/dau-my-albion.jpg	images/dau-my-albion.jpg
+90	Ớt trái cây ngọt Sweet Palermo Đà Lạt	ot-trai-cay-sweet-palermo	3	180000	180000	180.000 ₫	FALSE	images/ot-trai-cay-sweet-palermo.jpg	images/ot-trai-cay-sweet-palermo.jpg
+91	Chanh dây vàng ngọt hương ổi Đà Lạt	chanh-day-vang-ngot-huong-oi	3	150000	150000	150.000 ₫	FALSE	images/chanh-day-vang-ngot-huong-oi.jpg	images/chanh-day-vang-ngot-huong-oi.jpg
+92	Dưa Pepino sọc tím Đà Lạt	dua-pepino-tim	3	160000	160000	160.000 ₫	FALSE	images/dua-pepino-tim.jpg	images/dua-pepino-tim.jpg
+93	Dưa Pepino vàng mật Đà Lạt	dua-pepino-vang	3	160000	160000	160.000 ₫	FALSE	images/dua-pepino-vang.jpg	images/dua-pepino-vang.jpg
+94	Set Quà Tết Xuân Bình An Thượng Hạng (TQ3)	qua-tet-xuan-binh-an	6	1340000	1340000	1.340.000 ₫	FALSE	images/qua-tet-xuan-binh-an.jpg	images/qua-tet-xuan-binh-an.jpg
+95	Hộp Quà Biếu Cao Cấp Đà Lạt 06 Món	hop-qua-tet-cao-cap-06-mon	6	490000	490000	490.000 ₫	FALSE	images/hop-qua-tet-cao-cap-06-mon.jpg	images/hop-qua-tet-cao-cap-06-mon.jpg
+96	Hộp Quà Đặc Sản Đà Lạt Tinh Hoa 04 Món	hop-qua-tet-dac-san-da-lat-04-mon	6	390000	390000	390.000 ₫	FALSE	images/hop-qua-tet-dac-san-da-lat-04-mon.jpg	images/hop-qua-tet-dac-san-da-lat-04-mon.jpg
+97	Bột cần tây sấy lạnh nguyên chất Đà Lạt	bot-can-tay	7	150000	150000	150.000 ₫	FALSE	images/bot-can-tay.jpg	images/bot-can-tay.jpg
+98	Dâu tằm Đà Lạt ngâm đường phèn	dau-tam-ngam-duong	2	400000	400000	400.000 ₫	FALSE	images/dau-tam-ngam-duong.jpg	images/dau-tam-ngam-duong.jpg
+99	Nước cốt chanh dây cô đặc cấp đông	nuoc-chanh-day-co-dac-dong-lanh	8			Liên hệ	TRUE	images/nuoc-chanh-day-co-dac-dong-lanh.jpg	images/nuoc-chanh-day-co-dac-dong-lanh.jpg
+100	Chanh dây Đà Lạt cấp đông bổ đôi	chanh-day-dong-lanh-bo-doi	8			Liên hệ	TRUE	images/chanh-day-dong-lanh-bo-doi.jpg	images/chanh-day-dong-lanh-bo-doi.jpg
+101	Phúc bồn tử Đà Lạt cấp đông nguyên trái	phuc-bon-tu-dong-lanh	8			Liên hệ	TRUE	images/phuc-bon-tu-dong-lanh.jpg	images/phuc-bon-tu-dong-lanh.jpg
+102	Bơ sáp Đà Lạt cấp đông hút chân không	bo-cap-dong	8			Liên hệ	TRUE	images/bo-cap-dong.jpg	images/bo-cap-dong.jpg
+103	Dâu tây Đà Lạt cấp đông nguyên trái	dau-tay-dong-lanh	8			Liên hệ	TRUE	images/dau-tay-dong-lanh.jpg	images/dau-tay-dong-lanh.jpg
+104	Bột rau má đậu xanh cốt dừa sấy lạnh	bot-rau-ma-dau-xanh-cot-dua	7			Liên hệ	TRUE	images/bot-rau-ma-dau-xanh-cot-dua.jpg	images/bot-rau-ma-dau-xanh-cot-dua.jpg
+105	Bột rau má sấy lạnh nguyên chất	bot-rau-ma	7			Liên hệ	TRUE	images/bot-rau-ma.jpg	images/bot-rau-ma.jpg
+106	Bột diếp cá sấy lạnh thanh nhiệt	bot-diep-ca	7			Liên hệ	TRUE	images/bot-diep-ca.jpg	images/bot-diep-ca.jpg
+107	Bột rau củ tổng hợp sấy lạnh cho bé ăn dặm	bot-rau-cu-cho-be	7			Liên hệ	TRUE	images/bot-rau-cu-cho-be.jpg	images/bot-rau-cu-cho-be.jpg
+108	Bột chùm ngây sấy lạnh giàu vi chất	bot-chum-ngay	7			Liên hệ	TRUE	images/bot-chum-ngay.jpg	images/bot-chum-ngay.jpg
+109	Bột tía tô sấy lạnh Dalahouse	bot-tia-to-dalahouse	7			Liên hệ	TRUE	images/bot-tia-to-dalahouse.jpg	images/bot-tia-to-dalahouse.jpg
+110	Bột rau củ Detox thanh lọc cơ thể	bot-rau-detox	7			Liên hệ	TRUE	images/bot-rau-detox.jpg	images/bot-rau-detox.jpg
+111	Bột hoa đậu biếc sấy lạnh tự nhiên	bot-hoa-dau-biec	7			Liên hệ	TRUE	images/bot-hoa-dau-biec.jpg	images/bot-hoa-dau-biec.jpg
+112	Bột cỏ lúa mì sấy lạnh hữu cơ	bot-co-lua-mi	7			Liên hệ	TRUE	images/bot-co-lua-mi.jpg	images/bot-co-lua-mi.jpg
+113	Bột cải xoăn (Kale) sấy lạnh Đà Lạt	bot-cai-xoan	7			Liên hệ	TRUE	images/bot-cai-xoan.jpg	images/bot-cai-xoan.jpg
+114	Bột rau bó xôi (Spinach) sấy lạnh	bot-rau-bo-xoi	7			Liên hệ	TRUE	images/bot-rau-bo-xoi.jpg	images/bot-rau-bo-xoi.jpg
+115	Bột củ dền sấy lạnh nguyên chất Đà Lạt	bot-cu-den	7			Liên hệ	TRUE	images/bot-cu-den.jpg	images/bot-cu-den.jpg
+116	Hộp quà Dâu tây Nhật trái tim sang trọng	hop-dau-tay-trai-tim	1			Liên hệ	TRUE	images/hop-dau-tay-trai-tim.jpg	images/hop-dau-tay-trai-tim.jpg
+117	Hồng giòn Fuyu giống Nhật trồng tại Đà Lạt	hong-gion-fuyu	3			Liên hệ	TRUE	images/hong-gion-fuyu.jpg	images/hong-gion-fuyu.jpg
+118	Dâu tây New Zealand trồng thủy canh Đà Lạt	dau-tay-new-zealand	3			Liên hệ	TRUE	images/dau-tay-new-zealand.jpg	images/dau-tay-new-zealand.jpg
+119	Hộp Hoa Bất Tử Đà Lạt Tình Yêu Vĩnh Cửu	hoa-bat-tu-tinh-yeu	3			Liên hệ	TRUE	images/hoa-bat-tu-tinh-yeu.jpg	images/hoa-bat-tu-tinh-yeu.jpg

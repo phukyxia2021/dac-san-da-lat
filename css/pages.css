@@ -1,0 +1,1425 @@
+/* ==========================================================================
+   04. PAGES - Homepage, Category, Product Detail, Checkout, Order Success, Blog
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 2. Hero Section (Slider + Bento Grid)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-block: var(--space-4) var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-block: var(--space-6) var(--space-8);
+  }
+}
+
+.hero-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .hero-bento {
+    grid-template-columns: 2.1fr 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.hero-slider {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 360px;
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+  .hero-slider {
+    min-height: 440px;
+  }
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease-out;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  min-height: inherit;
+}
+
+.hero-slide__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-slide__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(19, 42, 31, 0.88) 0%,
+    rgba(19, 42, 31, 0.62) 55%,
+    rgba(19, 42, 31, 0.25) 100%
+  );
+}
+
+.hero-slide__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-6);
+  max-width: 600px;
+  color: var(--color-surface);
+}
+
+@media (min-width: 768px) {
+  .hero-slide__content {
+    padding: var(--space-10);
+  }
+}
+
+.hero-slide__tag {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(216, 243, 220, 0.2);
+  border: 1px solid rgba(216, 243, 220, 0.45);
+  color: var(--color-primary-light);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.hero-slide__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h1);
+  color: var(--color-surface);
+  margin-bottom: var(--space-3);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+}
+
+.hero-slide__desc {
+  font-size: var(--fs-body);
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: var(--space-6);
+  max-width: 48ch;
+}
+
+.hero-slide__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero-slider__controls {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-6);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.hero-slider__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.hero-slider__dot.is-active {
+  width: 26px;
+  background-color: var(--color-surface);
+}
+
+.hero-slider__arrow {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-surface);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+}
+
+@media (min-width: 1024px) {
+  .hero-slider__arrow {
+    display: inline-flex;
+  }
+}
+
+.hero-slider__arrow:hover {
+  background: var(--color-primary);
+}
+
+/* Bento Side Cards */
+.hero-side {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 1024px) {
+  .hero-side {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.hero-side-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 170px;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-side-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease-out;
+}
+
+.hero-side-card:hover .hero-side-card__img {
+  transform: scale(1.05);
+}
+
+.hero-side-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(17, 24, 39, 0.84) 0%, rgba(17, 24, 39, 0.18) 100%);
+}
+
+.hero-side-card__body {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-4);
+  color: var(--color-surface);
+}
+
+.hero-side-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--color-surface);
+  margin-bottom: 4px;
+}
+
+.hero-side-card__link {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-primary-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 3. Thanh Cam kết Chất lượng (5 Trust Badges)
+   -------------------------------------------------------------------------- */
+.trust-bar {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: var(--space-4);
+}
+
+.trust-bar__list {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: var(--space-4);
+  scrollbar-width: none;
+}
+
+.trust-bar__list::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .trust-bar__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow: visible;
+  }
+}
+
+.trust-item {
+  scroll-snap-align: start;
+  flex: 0 0 215px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+}
+
+@media (min-width: 1024px) {
+  .trust-item {
+    flex: initial;
+  }
+}
+
+.trust-item__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-item__title {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.trust-item__sub {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 4. Flash Sale / Đặc sản theo mùa
+   -------------------------------------------------------------------------- */
+.flash-sale-section {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, #FDE68A 100%);
+  border-top: 1px solid #FCD34D;
+  border-bottom: 1px solid #FCD34D;
+}
+
+.flash-sale__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.flash-sale__title-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.flash-sale__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-sale);
+  color: var(--color-surface);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+}
+
+.countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.countdown__unit {
+  min-width: 46px;
+  padding: 6px 8px;
+  background-color: var(--color-primary-dark);
+  color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.countdown__num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.countdown__label {
+  display: block;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin-top: 2px;
+}
+
+.countdown__sep {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.flash-sale__scroller {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 74%;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .flash-sale__scroller {
+    grid-auto-columns: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flash-sale__scroller {
+    grid-auto-flow: unset;
+    grid-auto-columns: unset;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+    overflow: visible;
+  }
+}
+
+.flash-sale__scroller > * {
+  scroll-snap-align: start;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 5. Kệ sản phẩm theo Danh mục & Quick Category Pills
+   -------------------------------------------------------------------------- */
+.cat-pills-nav {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-6);
+  scrollbar-width: none;
+}
+
+.cat-pills-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.cat-pill:hover,
+.cat-pill.is-active {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  border-color: var(--color-primary);
+}
+
+.category-shelf {
+  padding-block: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.category-shelf:last-of-type {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 6. Chuyên mục "Gợi ý Quà Biếu Đà Lạt" (Sang trọng)
+   -------------------------------------------------------------------------- */
+.gift-section {
+  background-color: var(--color-primary-dark);
+  color: var(--color-surface);
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-section .section__title {
+  color: var(--color-surface);
+}
+
+.gift-section__intro {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 64ch;
+  margin-top: var(--space-2);
+}
+
+.gift-occasions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.gift-occasion-tag {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.12);
+  color: #FDE68A;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.gift-tiers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .gift-tiers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gift-card {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(212, 175, 55, 0.45);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+}
+
+.gift-card__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.gift-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gift-card__tier {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-primary-dark);
+  color: #FDE68A;
+  border: 1px solid var(--color-gold);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.gift-card__body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.gift-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-2);
+}
+
+.gift-card__price {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.gift-card__items {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gift-card__items li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gift-card__items li::before {
+  content: "✓";
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Khối Quà Doanh Nghiệp (B2B) */
+.b2b-box {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .b2b-box {
+    grid-template-columns: 1.1fr 1fr;
+    padding: var(--space-8);
+  }
+}
+
+.b2b-perks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-block: var(--space-4);
+  font-size: var(--fs-small);
+  color: var(--color-primary-light);
+}
+
+.b2b-form {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .b2b-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 7. Câu chuyện Thương hiệu (Storytelling & Timeline 4 bước)
+   -------------------------------------------------------------------------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .story-grid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.story-media {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-3);
+}
+
+.story-media__img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.story-timeline {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-block: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .story-timeline {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.timeline-step {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  position: relative;
+}
+
+.timeline-step__num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.timeline-step__title {
+  font-weight: 700;
+  font-size: var(--fs-small);
+  margin-bottom: 4px;
+}
+
+.timeline-step__desc {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.story-counters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.story-counter__num {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.story-counter__label {
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   HOMEPAGE - 8. Góc Cẩm nang & Ẩm thực Đà Lạt (Blog Grid)
+   -------------------------------------------------------------------------- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.blog-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.blog-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.blog-card__cat {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.blog-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+  line-height: 1.35;
+}
+
+.blog-card__excerpt {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-card__footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   BREADCRUMB & FORMS (Dùng chung cho Category, Product, Checkout)
+   -------------------------------------------------------------------------- */
+.breadcrumb {
+  padding-block: var(--space-4);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.breadcrumb__current {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-label__req {
+  color: var(--color-error);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-body);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.14);
+}
+
+.form-input.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--color-error);
+  background-color: #FEF2F2;
+}
+
+.form-error {
+  font-size: var(--fs-xs);
+  color: var(--color-error);
+  font-weight: 500;
+  min-height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   CATEGORY PAGE (`category.html`)
+   -------------------------------------------------------------------------- */
+.category-banner {
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.category-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .category-layout {
+    grid-template-columns: 270px 1fr;
+  }
+}
+
+/* Filter Sidebar (Desktop Sticky / Mobile Bottom Sheet Drawer) */
+.filter-sidebar {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+@media (max-width: 1023px) {
+  .filter-sidebar {
+    position: fixed;
+    inset: 0;
+    z-index: 230;
+    background: rgba(17, 24, 39, 0.5);
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+
+  .filter-sidebar.is-open {
+    pointer-events: auto;
+    opacity: 1;
+  }
+
+  .filter-sidebar__inner {
+    width: 100%;
+    max-height: 85vh;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding: var(--space-5);
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform var(--transition-base);
+  }
+
+  .filter-sidebar.is-open .filter-sidebar__inner {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-sidebar {
+    position: sticky;
+    top: 136px;
+  }
+  .filter-sidebar__mobile-header,
+  .filter-sidebar__mobile-footer {
+    display: none;
+  }
+}
+
+.filter-sidebar__mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-sidebar__mobile-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.filter-group {
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.filter-group:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-group__title {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--fs-small);
+  cursor: pointer;
+}
+
+.filter-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.category-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.mobile-filter-trigger {
+  display: inline-flex;
+}
+
+@media (min-width: 1024px) {
+  .mobile-filter-trigger {
+    display: none;
+  }
+}
+
+.active-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.active-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   PRODUCT DETAIL PAGE (`product.html`)
+   -------------------------------------------------------------------------- */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--space-10);
+  }
+}
+
+.product-gallery__main {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+  cursor: zoom-in;
+}
+
+.product-gallery__main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease-out;
+}
+
+.product-gallery__counter {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(17, 24, 39, 0.7);
+  color: var(--color-surface);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+
+.product-gallery__thumbs {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+}
+
+.product-gallery__thumb {
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-border);
+  overflow: hidden;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: all var(--transition-fast);
+}
+
+.product-gallery__thumb.is-active,
+.product-gallery__thumb:hover {
+  border-color: var(--color-primary);
+  opacity: 1;
+}
+
+.product-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.product-info__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: var(--space-3);
+}
+
+.product-info__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-4);
+}
+
+.product-info__price-box {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.product-info__price {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.product-info__original-price {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  text-decoration: line-through;
+}
+
+.product-info__variants {
+  margin-bottom: var(--space-5);
+}
+
+.product-info__variant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.detail-variant-btn {
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-surface);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  transition: all var(--transition-fast);
+}
+
+.detail-variant-btn.is-active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.product-info__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block: var(--space-6);
+}
+
+.product-info__trust {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-xs);
+  text-align: center;
+}
+
+/* 5 mục thông tin bắt buộc + Tabs/Accordion */
+.product-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+@media (min-width: 640px) {
+  .spec-row {
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.spec-row__label {
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: var(--fs-small);
+}
+
+/* Sticky Buy Bar on Mobile */
+.mobile-sticky-buy {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 98;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  padding: 10px var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .mobile-sticky-buy {
+    display: none;
+  }
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 280;
+  background: rgba(0, 0, 0, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.lightbox-modal.is-open {
+  display: flex;
+}
+
+.lightbox-modal__img {
+  max-width: 92vw;
+  max-height: 86vh;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   CHECKOUT PAGE (`checkout.html`) & ORDER SUCCESS (`order-success.html`)
+   -------------------------------------------------------------------------- */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .checkout-layout {
+    grid-template-columns: 1.35fr 1fr;
+  }
+}
+
+.checkout-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.checkout-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.payment-option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-bottom: var(--space-3);
+  transition: all var(--transition-fast);
+}
+
+.payment-option.is-selected {
+  border-color: var(--color-primary);
+  background-color: rgba(216, 243, 220, 0.25);
+}
+
+.payment-option__detail {
+  display: none;
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  border: 1px dashed var(--color-primary);
+}
+
+.payment-option.is-selected .payment-option__detail {
+  display: block;
+}
+
+.order-summary-sticky {
+  position: sticky;
+  top: 96px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 8px;
+  font-size: var(--fs-small);
+}
+
+.summary-row--total {
+  border-top: 2px solid var(--color-border);
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.test-order-banner {
+  background-color: var(--color-accent-light);
+  border: 1px solid #F59E0B;
+  color: #92400E;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}

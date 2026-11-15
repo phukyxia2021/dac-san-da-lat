@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanh toán Đơn hàng – Đặc sản Đà Lạt</title>
+  <meta
+    name="description"
+    content="Thanh toán nhanh trong 1 bước: Giao hàng toàn quốc, kiểm hàng trước khi thanh toán (COD), chuyển khoản VietQR hoặc ví điện tử."
+  />
+  <link rel="icon" type="image/jpeg" href="images/logo/logo_dac_san_da_lat.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+<body data-page="checkout">
+  <div id="site-header-mount"></div>
+
+  <main id="checkout-page-root" style="padding-bottom:var(--space-12);">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol class="breadcrumb__list">
+          <li><a href="index.html" class="breadcrumb__link">Trang chủ</a></li>
+          <li>›</li>
+          <li class="breadcrumb__current" aria-current="page">Thanh toán 1 bước</li>
+        </ol>
+      </nav>
+
+      <div class="test-order-banner">
+        ℹ️ <strong>Chế độ Đặt hàng thử nghiệm:</strong> Đơn hàng sẽ được lưu vào bộ nhớ trình duyệt (LocalStorage) để kiểm thử toàn bộ luồng mua sắm.
+      </div>
+
+      <h1 class="section__title" style="margin-bottom:var(--space-6);">Hoàn Tất Đặt Hàng</h1>
+
+      <form id="checkout-form" class="checkout-layout" novalidate>
+        <!-- Cột trái: Thông tin người nhận & Phương thức thanh toán -->
+        <div>
+          <!-- 5.2 Form đặt hàng tối giản (≤ 5 trường bắt buộc) -->
+          <div class="checkout-card">
+            <h2 class="checkout-card__title">1. Thông tin Người nhận hàng</h2>
+            <div style="display:grid; grid-template-columns:1fr; gap:var(--space-4);">
+              <div class="form-group">
+                <label class="form-label" for="checkout-fullname">
+                  Họ và tên người nhận <span class="form-label__req">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="checkout-fullname"
+                  name="fullName"
+                  class="form-input"
+                  placeholder="Nhập họ và tên của bạn"
+                  required
+                />
+                <span class="form-error" id="err-fullname"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-phone">
+                  Số điện thoại nhận hàng <span class="form-label__req">*</span>
+                </label>
+                <input
+                  type="tel"
+                  inputmode="tel"
+                  id="checkout-phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="VD: 0363087855"
+                  required
+                />
+                <span class="form-error" id="err-phone"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-province">
+                  Tỉnh / Thành phố <span class="form-label__req">*</span>
+                </label>
+                <select id="checkout-province" name="province" class="form-select"></select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-address">
+                  Địa chỉ chi tiết (Số nhà, đường, phường/xã, quận/huyện) <span class="form-label__req">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="checkout-address"
+                  name="address"
+                  class="form-input"
+                  placeholder="VD: Số 118 Phan Xích Long, Phường 2, Quận Phú Nhuận"
+                  required
+                />
+                <span class="form-error" id="err-address"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkout-gift-note">
+                  🎁 Ghi chú đơn hàng / Lời chúc in thiệp quà biếu (Tuỳ chọn)
+                </label>
+                <textarea
+                  id="checkout-gift-note"
+                  name="giftNote"
+                  class="form-textarea"
+                  placeholder="Nếu gửi tặng người thân/đối tác, bạn hãy ghi nội dung thiệp chúc mừng hoặc khung giờ giao hàng tại đây..."
+                ></textarea>
+              </div>
+
+              <label class="filter-option" style="font-weight:500;">
+                <input type="checkbox" id="checkout-hide-price" name="hidePrice" />
+                <span>Gửi làm quà tặng (Ẩn giá trên phiếu giao hàng)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- 5.4 Phương thức thanh toán (3 lựa chọn) -->
+          <div class="checkout-card">
+            <h2 class="checkout-card__title">2. Phương thức Thanh toán</h2>
+
+            <label class="payment-option is-selected" data-payment-option>
+              <input type="radio" name="paymentMethod" value="COD" checked style="margin-top:4px; accent-color:var(--color-primary);" />
+              <div style="flex:1;">
+                <div style="font-weight:700;">💵 Thanh toán khi nhận hàng (COD)</div>
+                <div style="font-size:var(--fs-xs); color:var(--color-text-muted);">
+                  Quý khách được đồng kiểm sản phẩm trước khi thanh toán tiền mặt cho bưu tá.
+                </div>
+              </div>
+            </label>
+
+            <label class="payment-option" data-payment-option>
+              <input type="radio" name="paymentMethod" value="BANK" style="margin-top:4px; accent-color:var(--color-primary);" />
+              <div style="flex:1;">
+                <div style="font-weight:700;">🏦 Chuyển khoản Ngân hàng (VietQR)</div>
+                <div style="font-size:var(--fs-xs); color:var(--color-text-muted);">
+                  Chuyển khoản nhanh 24/7. Phù hợp khi đặt quà biếu gửi thẳng đến địa chỉ người nhận.
+                </div>
+                <div class="payment-option__detail" id="checkout-bank-info"></div>
+              </div>
+            </label>
+
+            <label class="payment-option" data-payment-option>
+              <input type="radio" name="paymentMethod" value="EWALLET" style="margin-top:4px; accent-color:var(--color-primary);" />
+              <div style="flex:1;">
+                <div style="font-weight:700;">📱 Ví điện tử (MoMo / ZaloPay / VNPay)</div>
+                <div style="font-size:var(--fs-xs); color:var(--color-text-muted);">
+                  Quét mã QR hoặc chuyển ví điện tử nhanh chóng sau khi xác nhận đơn hàng.
+                </div>
+                <div class="payment-option__detail">
+                  Hỗ trợ thanh toán qua MoMo / ZaloPay SĐT: <strong>0363087855</strong>. Hướng dẫn chi tiết hiển thị ngay sau khi bấm Đặt hàng.
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Cột phải: Tóm tắt đơn hàng, Mã giảm giá & Phí vận chuyển tự động -->
+        <div class="order-summary-sticky">
+          <div class="checkout-card">
+            <h2 class="checkout-card__title">Tóm tắt Đơn hàng</h2>
+            <div id="checkout-items-list" style="max-height:300px; overflow-y:auto; margin-bottom:var(--space-4);"></div>
+
+            <!-- Ô nhập mã giảm giá -->
+            <div style="margin-bottom:var(--space-4); padding-bottom:var(--space-4); border-bottom:1px solid var(--color-border);">
+              <label for="checkout-promo-input" class="form-label" style="font-size:var(--fs-xs);">
+                Mã giảm giá (Thử: <code>DALAT10</code>, <code>FREESHIP</code>, <code>QUABIEU50</code>)
+              </label>
+              <div style="display:flex; gap:8px; margin-top:6px;">
+                <input
+                  type="text"
+                  id="checkout-promo-input"
+                  class="form-input"
+                  style="min-height:42px; text-transform:uppercase;"
+                  placeholder="Nhập mã ưu đãi..."
+                />
+                <button type="button" class="btn btn--outline" id="checkout-promo-btn" style="min-height:42px;">
+                  Áp dụng
+                </button>
+              </div>
+              <p id="checkout-promo-msg" style="font-size:var(--fs-xs); font-weight:600; margin-top:6px;"></p>
+            </div>
+
+            <!-- Chi tiết phí -->
+            <div class="summary-row">
+              <span>Tạm tính:</span>
+              <strong id="checkout-subtotal">0₫</strong>
+            </div>
+            <div class="summary-row">
+              <span>Phí vận chuyển:</span>
+              <span id="checkout-shipping">0₫</span>
+            </div>
+            <div class="summary-row" id="checkout-discount-row" style="display:none; color:var(--color-success);">
+              <span>Giảm giá khuyến mãi:</span>
+              <strong id="checkout-discount">−0₫</strong>
+            </div>
+            <div class="summary-row summary-row--total">
+              <span>Tổng cộng:</span>
+              <span id="checkout-grand-total">0₫</span>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn--primary btn--lg btn--block"
+              id="checkout-submit-btn"
+              style="margin-top:var(--space-4);"
+            >
+              Đặt hàng ngay
+            </button>
+
+            <p style="font-size:var(--fs-xs); color:var(--color-text-muted); text-align:center; margin-top:var(--space-3);">
+              🔒 Thông tin của bạn được bảo mật tuyệt đối · Đổi trả trong 7 ngày
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
