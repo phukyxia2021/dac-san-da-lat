@@ -980,7 +980,7 @@ export const PRODUCTS = [
     "name": "Khoai lang sấy gừng mật ong ấm vị",
     "categoryId": "cat-01",
     "dbCategoryId": 1,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/khoai-lang-gung.jpg",
       "images/dau-tam-say-deo.jpg",
@@ -3877,7 +3877,7 @@ export const PRODUCTS = [
     "name": "Vải thiều sấy khô nguyên vỏ",
     "categoryId": "cat-01",
     "dbCategoryId": 4,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/vai-thieu-say-kho.jpg",
       "images/hong-treo-gio-da-lat.jpg",
@@ -3994,7 +3994,7 @@ export const PRODUCTS = [
     "name": "Sinh tố hoa Atiso đỏ Đà Lạt",
     "categoryId": "cat-03",
     "dbCategoryId": 2,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/sinh-to-atiso-do.jpg",
       "images/dau-tam-ngam-duong.jpg",
@@ -4051,7 +4051,7 @@ export const PRODUCTS = [
     "name": "Hạt dẻ rừng rang bơ (Túi 2kg)",
     "categoryId": "cat-04",
     "dbCategoryId": 1,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/hat-de-rung.jpg",
       "images/dau-tay-da-lat.jpg",
@@ -4167,7 +4167,7 @@ export const PRODUCTS = [
     "name": "Dâu tây Đà Lạt má đá tươi sạch",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/dau-tay-da-lat.jpg",
       "images/chau-dau-tay-da-lat.jpg",
@@ -4224,7 +4224,7 @@ export const PRODUCTS = [
     "name": "Chậu Dâu tây Đà Lạt đang sẵn trái",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/chau-dau-tay-da-lat.jpg",
       "images/dau-tam-da-lat.jpg",
@@ -4397,7 +4397,7 @@ export const PRODUCTS = [
     "name": "Bơ 034 Đà Lạt dẻo béo loại 1",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bo-034-da-lat.jpg",
       "images/bo-booth.jpg",
@@ -4921,7 +4921,7 @@ export const PRODUCTS = [
     "name": "Hồng giòn Chín Nên Đà Lạt không hạt",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/hong-gion-chin-nen.jpg",
       "images/ca-chua-baby-da-lat.jpg",
@@ -5092,7 +5092,7 @@ export const PRODUCTS = [
     "name": "Dưa lê Pháp trồng nhà kính Đà Lạt",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/dua-le-phap.jpg",
       "images/sam-dat-da-lat-sam-dat-yacon.jpg",
@@ -5151,7 +5151,7 @@ export const PRODUCTS = [
     "name": "Sâm đất Đà Lạt (Yacon) giòn ngọt mát",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/sam-dat-da-lat-sam-dat-yacon.jpg",
       "images/hong-gion-trung-da.jpg",
@@ -5265,7 +5265,7 @@ export const PRODUCTS = [
     "name": "Dâu tây Mỹ Albion Đà Lạt",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/dau-my-albion.jpg",
       "images/ot-trai-cay-sweet-palermo.jpg",
@@ -5852,7 +5852,7 @@ export const PRODUCTS = [
     "name": "Nước cốt chanh dây cô đặc cấp đông",
     "categoryId": "cat-04",
     "dbCategoryId": 8,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/nuoc-chanh-day-co-dac-dong-lanh.jpg",
       "images/chanh-day-dong-lanh-bo-doi.jpg",
@@ -5909,7 +5909,7 @@ export const PRODUCTS = [
     "name": "Chanh dây Đà Lạt cấp đông bổ đôi",
     "categoryId": "cat-04",
     "dbCategoryId": 8,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/chanh-day-dong-lanh-bo-doi.jpg",
       "images/phuc-bon-tu-dong-lanh.jpg",
@@ -5966,7 +5966,7 @@ export const PRODUCTS = [
     "name": "Phúc bồn tử Đà Lạt cấp đông nguyên trái",
     "categoryId": "cat-04",
     "dbCategoryId": 8,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/phuc-bon-tu-dong-lanh.jpg",
       "images/bo-cap-dong.jpg",
@@ -6025,7 +6025,7 @@ export const PRODUCTS = [
     "name": "Bơ sáp Đà Lạt cấp đông hút chân không",
     "categoryId": "cat-04",
     "dbCategoryId": 8,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bo-cap-dong.jpg",
       "images/dau-tay-dong-lanh.jpg",
@@ -6082,7 +6082,7 @@ export const PRODUCTS = [
     "name": "Dâu tây Đà Lạt cấp đông nguyên trái",
     "categoryId": "cat-04",
     "dbCategoryId": 8,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/dau-tay-dong-lanh.jpg",
       "images/hong-gion-fuyu.jpg",
@@ -6139,7 +6139,7 @@ export const PRODUCTS = [
     "name": "Bột rau má đậu xanh cốt dừa sấy lạnh",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-rau-ma-dau-xanh-cot-dua.jpg",
       "images/bot-rau-ma.jpg",
@@ -6196,7 +6196,7 @@ export const PRODUCTS = [
     "name": "Bột rau má sấy lạnh nguyên chất",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-rau-ma.jpg",
       "images/bot-diep-ca.jpg",
@@ -6255,7 +6255,7 @@ export const PRODUCTS = [
     "name": "Bột diếp cá sấy lạnh thanh nhiệt",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-diep-ca.jpg",
       "images/bot-rau-cu-cho-be.jpg",
@@ -6314,7 +6314,7 @@ export const PRODUCTS = [
     "name": "Bột rau củ tổng hợp sấy lạnh cho bé ăn dặm",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-rau-cu-cho-be.jpg",
       "images/bot-chum-ngay.jpg",
@@ -6371,7 +6371,7 @@ export const PRODUCTS = [
     "name": "Bột chùm ngây sấy lạnh giàu vi chất",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-chum-ngay.jpg",
       "images/bot-tia-to-dalahouse.jpg",
@@ -6428,7 +6428,7 @@ export const PRODUCTS = [
     "name": "Bột tía tô sấy lạnh Dalahouse",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-tia-to-dalahouse.jpg",
       "images/bot-rau-detox.jpg",
@@ -6485,7 +6485,7 @@ export const PRODUCTS = [
     "name": "Bột rau củ Detox thanh lọc cơ thể",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-rau-detox.jpg",
       "images/bot-hoa-dau-biec.jpg",
@@ -6542,7 +6542,7 @@ export const PRODUCTS = [
     "name": "Bột hoa đậu biếc sấy lạnh tự nhiên",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-hoa-dau-biec.jpg",
       "images/bot-co-lua-mi.jpg",
@@ -6601,7 +6601,7 @@ export const PRODUCTS = [
     "name": "Bột cỏ lúa mì sấy lạnh hữu cơ",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-co-lua-mi.jpg",
       "images/bot-cai-xoan.jpg",
@@ -6658,7 +6658,7 @@ export const PRODUCTS = [
     "name": "Bột cải xoăn (Kale) sấy lạnh Đà Lạt",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-cai-xoan.jpg",
       "images/bot-rau-bo-xoi.jpg",
@@ -6715,7 +6715,7 @@ export const PRODUCTS = [
     "name": "Bột rau bó xôi (Spinach) sấy lạnh",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-rau-bo-xoi.jpg",
       "images/bot-cu-den.jpg",
@@ -6772,7 +6772,7 @@ export const PRODUCTS = [
     "name": "Bột củ dền sấy lạnh nguyên chất Đà Lạt",
     "categoryId": "cat-05",
     "dbCategoryId": 7,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/bot-cu-den.jpg",
       "images/bot-can-tay.jpg",
@@ -6829,7 +6829,7 @@ export const PRODUCTS = [
     "name": "Hộp quà Dâu tây Nhật trái tim sang trọng",
     "categoryId": "cat-06",
     "dbCategoryId": 1,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/hop-dau-tay-trai-tim.jpg",
       "images/hoa-bat-tu-tinh-yeu.jpg",
@@ -6880,7 +6880,7 @@ export const PRODUCTS = [
     "name": "Hồng giòn Fuyu giống Nhật trồng tại Đà Lạt",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/hong-gion-fuyu.jpg",
       "images/dau-tay-new-zealand.jpg",
@@ -6937,7 +6937,7 @@ export const PRODUCTS = [
     "name": "Dâu tây New Zealand trồng thủy canh Đà Lạt",
     "categoryId": "cat-04",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/dau-tay-new-zealand.jpg",
       "images/dau-tay-da-lat.jpg",
@@ -6995,7 +6995,7 @@ export const PRODUCTS = [
     "name": "Hộp Hoa Bất Tử Đà Lạt Tình Yêu Vĩnh Cửu",
     "categoryId": "cat-06",
     "dbCategoryId": 3,
-    "isContactPrice": true,
+    "isContactPrice": false,
     "images": [
       "images/hoa-bat-tu-tinh-yeu.jpg",
       "images/qua-tet-xuan-binh-an.jpg",

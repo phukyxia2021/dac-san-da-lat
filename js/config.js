@@ -3,9 +3,9 @@
 
 export const CONFIG = {
   // Nguồn dữ liệu: "local" | "supabase"
-  DATA_SOURCE: "local",
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: "",
+  DATA_SOURCE: "supabase",
+  SUPABASE_URL: "https://rgddiapkfdyrkyzldjve.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_AFKSTK_Ms_usyYn4mYUaug_AUEaYyCX",
 
   // Phiên bản schema LocalStorage
   SCHEMA_VERSION: "1.0.0",

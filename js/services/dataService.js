@@ -109,17 +109,163 @@ export function initStorageSchema() {
   }
 }
 
+// Bộ nhớ cache dữ liệu từ Supabase (khi DATA_SOURCE = "supabase")
+let supabaseProductsCache = null;
+
+function isSupabaseEnabled() {
+  return (
+    CONFIG.DATA_SOURCE === "supabase" &&
+    Boolean(CONFIG.SUPABASE_URL) &&
+    Boolean(CONFIG.SUPABASE_ANON_KEY)
+  );
+}
+
+function getSupabaseHeaders(extra = {}) {
+  const headers = {
+    apikey: CONFIG.SUPABASE_ANON_KEY,
+    "Content-Type": "application/json",
+    ...extra
+  };
+  if (CONFIG.SUPABASE_ANON_KEY && CONFIG.SUPABASE_ANON_KEY.startsWith("eyJ")) {
+    headers.Authorization = `Bearer ${CONFIG.SUPABASE_ANON_KEY}`;
+  }
+  return headers;
+}
+
+// Map category_id từ CSV (1..8) sang 6 danh mục chuẩn của giao diện (cat-01..cat-06)
+function mapCsvCategoryIdToStorefront(csvCatId, slug = "") {
+  if (slug.includes("atiso") || slug.includes("dong-trung") || slug.includes("sam") || slug.includes("mat-ong") || slug.includes("sua-ong-chua")) {
+    return "cat-02";
+  }
+  const map = {
+    1: "cat-01",
+    2: "cat-03",
+    3: "cat-04",
+    4: "cat-01",
+    5: "cat-01",
+    6: "cat-06",
+    7: "cat-05",
+    8: "cat-04"
+  };
+  return map[csvCatId] || "cat-01";
+}
+
+// Đồng bộ dữ liệu từ bảng `public.products` trên Supabase kết hợp với thông tin chi tiết local
+async function loadProductsFromSupabaseOrLocal() {
+  if (!isSupabaseEnabled()) {
+    return PRODUCTS.map(hydrateProduct);
+  }
+  if (supabaseProductsCache) {
+    return supabaseProductsCache.map(hydrateProduct);
+  }
+
+  try {
+    const url = `${CONFIG.SUPABASE_URL.replace(/\/$/, "")}/rest/v1/products?select=*&order=id.asc`;
+    const res = await fetch(url, { headers: getSupabaseHeaders() });
+    if (!res.ok) throw new Error(`Supabase HTTP ${res.status}`);
+    const rows = await res.json();
+
+    if (Array.isArray(rows) && rows.length > 0) {
+      const localBySlug = new Map(PRODUCTS.map((p) => [p.slug, p]));
+      const localByDbId = new Map(PRODUCTS.map((p) => [p.dbId, p]));
+
+      supabaseProductsCache = rows.map((row) => {
+        const base = localBySlug.get(row.slug) || localByDbId.get(row.id);
+        const basePrice = row.price_vnd || base?.variants?.[0]?.price || 120000;
+        const origPrice = row.original_price_vnd || base?.variants?.[0]?.originalPrice || basePrice;
+        const hasRowStock = row.stock !== null && row.stock !== undefined && !Number.isNaN(Number(row.stock));
+        const dbStock = hasRowStock ? Number(row.stock) : null;
+
+        if (base) {
+          const updatedVariants = base.variants.map((v, idx) => {
+            if (idx === 0) {
+              return {
+                ...v,
+                price: row.price_vnd || v.price,
+                originalPrice: row.original_price_vnd || row.price_vnd || v.originalPrice,
+                stock: dbStock !== null ? dbStock : v.stock
+              };
+            }
+            return {
+              ...v,
+              stock: dbStock !== null && dbStock === 0 ? 0 : v.stock
+            };
+          });
+          return {
+            ...base,
+            name: row.name || base.name,
+            slug: row.slug || base.slug,
+            stock: dbStock !== null ? dbStock : base.variants[0]?.stock || 50,
+            isContactPrice: Boolean(row.is_contact_price),
+            images: row.image_url
+              ? [row.image_url, ...base.images.filter((img) => img !== row.image_url)]
+              : base.images,
+            variants: updatedVariants
+          };
+        }
+
+        const fallbackStock = dbStock !== null ? dbStock : 50;
+
+        // Sản phẩm mới được thêm trực tiếp trên bảng Supabase `products`
+        return {
+          id: `p-${String(row.id).padStart(3, "0")}`,
+          dbId: row.id,
+          slug: row.slug,
+          name: row.name,
+          categoryId: mapCsvCategoryIdToStorefront(row.category_id, row.slug),
+          dbCategoryId: row.category_id,
+          stock: fallbackStock,
+          isContactPrice: Boolean(row.is_contact_price),
+          images: [row.image_url || "images/logo/logo_dac_san_da_lat.jpg"],
+          badges: [],
+          rating: 4.8,
+          soldCount: 150,
+          needs: ["an-vat", "tot-suc-khoe"],
+          isFlashSale: false,
+          flashSale: null,
+          variants: [
+            {
+              id: `${row.slug}-250`,
+              label: "250g",
+              weightG: 250,
+              price: basePrice,
+              originalPrice: origPrice,
+              stock: fallbackStock
+            },
+            {
+              id: `${row.slug}-500`,
+              label: "500g",
+              weightG: 500,
+              price: Math.round(basePrice * 1.85),
+              originalPrice: Math.round(origPrice * 1.9),
+              stock: fallbackStock > 0 ? Math.max(10, Math.round(fallbackStock * 0.7)) : 0
+            }
+          ],
+          shortDescription: `${row.name} chính gốc Đà Lạt – Lâm Đồng, tuyển chọn loại 1, không chất bảo quản.`,
+          info: {
+            origin: "Đà Lạt – Lâm Đồng, Việt Nam",
+            ingredients: `100% ${row.name} tự nhiên tuyển chọn`,
+            usage: "Dùng trực tiếp hoặc chế biến theo hướng dẫn trên bao bì.",
+            storage: "Bảo quản nơi khô ráo, thoáng mát hoặc ngăn mát tủ lạnh.",
+            shelfLife: "06 – 12 tháng kể từ ngày sản xuất"
+          },
+          createdAt: row.created_at || new Date().toISOString()
+        };
+      });
+
+      return supabaseProductsCache.map(hydrateProduct);
+    }
+  } catch (err) {
+    console.warn("[dataService] Không thể kết nối Supabase, tự động dùng dữ liệu local:", err);
+  }
+
+  return PRODUCTS.map(hydrateProduct);
+}
+
 /**
  * 1. Lấy danh sách 6 danh mục chuẩn
  */
 export async function getCategories() {
-  if (CONFIG.DATA_SOURCE === "supabase" && CONFIG.SUPABASE_URL) {
-    // TODO: Tích hợp Supabase bảng `categories`
-    // const res = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/categories?select=*&order=order.asc`, {
-    //   headers: { apikey: CONFIG.SUPABASE_ANON_KEY, Authorization: `Bearer ${CONFIG.SUPABASE_ANON_KEY}` }
-    // });
-    // return await res.json();
-  }
   return [...CATEGORIES].sort((a, b) => a.order - b.order);
 }
 
@@ -154,11 +300,7 @@ export async function getProducts({
   page = 1,
   pageSize = 1000
 } = {}) {
-  if (CONFIG.DATA_SOURCE === "supabase" && CONFIG.SUPABASE_URL) {
-    // TODO: Truy vấn bảng `products` và `product_variants` từ Supabase REST / SDK
-  }
-
-  let list = PRODUCTS.map(hydrateProduct);
+  let list = await loadProductsFromSupabaseOrLocal();
 
   // Lọc theo categorySlug đơn lẻ hoặc danh sách categories trong filters
   const activeCatSlugs = new Set();
@@ -266,10 +408,8 @@ export async function getProducts({
  */
 export async function getProductBySlug(slug) {
   if (!slug) return null;
-  if (CONFIG.DATA_SOURCE === "supabase" && CONFIG.SUPABASE_URL) {
-    // TODO: Truy vấn Supabase theo slug
-  }
-  const found = PRODUCTS.find((p) => p.slug === slug || p.id === slug);
+  const all = await loadProductsFromSupabaseOrLocal();
+  const found = all.find((p) => p.slug === slug || p.id === slug);
   return hydrateProduct(found);
 }
 
@@ -277,7 +417,8 @@ export async function getProductBySlug(slug) {
  * Lấy sản phẩm theo ID (phục vụ giỏ hàng lấy giá mới nhất)
  */
 export function getProductByIdSync(productId) {
-  const found = PRODUCTS.find((p) => p.id === productId || p.slug === productId);
+  const source = supabaseProductsCache || PRODUCTS;
+  const found = source.find((p) => p.id === productId || p.slug === productId);
   return hydrateProduct(found);
 }
 
@@ -285,7 +426,8 @@ export function getProductByIdSync(productId) {
  * 4. Lấy danh sách sản phẩm Flash Sale
  */
 export async function getFlashSaleProducts() {
-  const items = PRODUCTS.filter((p) => p.isFlashSale).map(hydrateProduct);
+  const all = await loadProductsFromSupabaseOrLocal();
+  const items = all.filter((p) => p.isFlashSale).map(hydrateProduct);
   return {
     endsAt: getFlashSaleEndsAt(),
     items
@@ -297,9 +439,9 @@ export async function getFlashSaleProducts() {
  */
 export async function getRelatedProducts(product, limit = 4) {
   if (!product) return [];
-  return PRODUCTS.filter(
-    (p) => p.categoryId === product.categoryId && p.id !== product.id
-  )
+  const all = await loadProductsFromSupabaseOrLocal();
+  return all
+    .filter((p) => p.categoryId === product.categoryId && p.id !== product.id)
     .slice(0, limit)
     .map(hydrateProduct);
 }
@@ -308,13 +450,14 @@ export async function getRelatedProducts(product, limit = 4) {
  * Lấy 3 Set Quà Biếu tiêu biểu theo 3 mức ngân sách
  */
 export async function getGiftHighlightSets() {
+  const all = await loadProductsFromSupabaseOrLocal();
   const targetSlugs = [
     "hop-qua-tet-dac-san-da-lat-04-mon",
     "hop-qua-tet-cao-cap-06-mon",
     "qua-tet-xuan-binh-an"
   ];
   return targetSlugs
-    .map((slug) => PRODUCTS.find((p) => p.slug === slug))
+    .map((slug) => all.find((p) => p.slug === slug))
     .filter(Boolean)
     .map(hydrateProduct);
 }
@@ -323,9 +466,6 @@ export async function getGiftHighlightSets() {
  * 5. Lấy danh sách bài viết Cẩm nang (Blog)
  */
 export async function getBlogPosts({ limit = 10 } = {}) {
-  if (CONFIG.DATA_SOURCE === "supabase" && CONFIG.SUPABASE_URL) {
-    // TODO: Truy vấn bảng `blog_posts` từ Supabase
-  }
   return BLOG_POSTS.slice(0, limit);
 }
 
@@ -335,7 +475,7 @@ export async function getBlogPostBySlug(slug) {
 }
 
 /**
- * 6. Tạo đơn hàng thử nghiệm (lưu vào LocalStorage `dld_orders`)
+ * 6. Tạo đơn hàng (Gửi lên Supabase nếu đã bật + lưu LocalStorage `dld_orders`)
  */
 export async function createOrder(orderPayload) {
   const now = new Date();
@@ -349,12 +489,55 @@ export async function createOrder(orderPayload) {
     code,
     createdAt: now.toISOString(),
     status: "pending",
-    isTestOrder: true,
+    isTestOrder: !isSupabaseEnabled(),
     ...orderPayload
   };
 
-  if (CONFIG.DATA_SOURCE === "supabase" && CONFIG.SUPABASE_URL) {
-    // TODO: Gửi đơn hàng lên bảng `orders` và `order_items` của Supabase
+  if (isSupabaseEnabled()) {
+    try {
+      const baseUrl = CONFIG.SUPABASE_URL.replace(/\/$/, "");
+      await fetch(`${baseUrl}/rest/v1/orders`, {
+        method: "POST",
+        headers: getSupabaseHeaders({ Prefer: "return=minimal" }),
+        body: JSON.stringify({
+          code: newOrder.code,
+          customer_name: newOrder.customer?.fullName || "",
+          customer_phone: newOrder.customer?.phone || "",
+          province_id: newOrder.customer?.provinceId || "",
+          province_name: newOrder.customer?.provinceName || "",
+          shipping_address: newOrder.customer?.address || "",
+          gift_note: newOrder.customer?.giftNote || "",
+          hide_price: Boolean(newOrder.customer?.hidePrice),
+          payment_method: newOrder.paymentMethod || "COD",
+          promo_code: newOrder.promoCode || "",
+          subtotal: newOrder.subtotal || 0,
+          shipping_fee: newOrder.shippingFee || 0,
+          discount_amount: newOrder.discountAmount || 0,
+          grand_total: newOrder.grandTotal || 0,
+          status: "pending"
+        })
+      });
+
+      if (Array.isArray(newOrder.items) && newOrder.items.length > 0) {
+        const itemsRows = newOrder.items.map((item) => ({
+          order_code: newOrder.code,
+          product_id: item.productId,
+          variant_id: item.variantId,
+          product_name: item.name,
+          variant_label: item.variantLabel,
+          price: item.price,
+          qty: item.qty,
+          line_total: item.lineTotal
+        }));
+        await fetch(`${baseUrl}/rest/v1/order_items`, {
+          method: "POST",
+          headers: getSupabaseHeaders({ Prefer: "return=minimal" }),
+          body: JSON.stringify(itemsRows)
+        });
+      }
+    } catch (err) {
+      console.warn("[dataService] Lỗi lưu đơn hàng lên Supabase:", err);
+    }
   }
 
   const orders = safeGetStorage(CONFIG.STORAGE_KEYS.ORDERS, []);
@@ -370,13 +553,27 @@ export async function getOrderByCode(code) {
 }
 
 /**
- * Lưu đăng ký nhận ưu đãi (`dld_subscribers`)
+ * Lưu đăng ký nhận ưu đãi (`dld_subscribers` & Supabase `subscribers`)
  */
 export async function saveSubscriber(contactValue) {
+  const cleanContact = contactValue.trim();
+  if (isSupabaseEnabled()) {
+    try {
+      const baseUrl = CONFIG.SUPABASE_URL.replace(/\/$/, "");
+      await fetch(`${baseUrl}/rest/v1/subscribers`, {
+        method: "POST",
+        headers: getSupabaseHeaders({ Prefer: "return=minimal" }),
+        body: JSON.stringify({ contact: cleanContact })
+      });
+    } catch (err) {
+      console.warn("[dataService] Lỗi lưu subscriber lên Supabase:", err);
+    }
+  }
+
   const list = safeGetStorage(CONFIG.STORAGE_KEYS.SUBSCRIBERS, []);
   const entry = {
     id: `sub-${Date.now()}`,
-    contact: contactValue.trim(),
+    contact: cleanContact,
     createdAt: new Date().toISOString()
   };
   list.unshift(entry);
@@ -385,9 +582,27 @@ export async function saveSubscriber(contactValue) {
 }
 
 /**
- * Lưu yêu cầu báo giá Quà Doanh Nghiệp (`dld_b2b_leads`)
+ * Lưu yêu cầu báo giá Quà Doanh Nghiệp (`dld_b2b_leads` & Supabase `b2b_leads`)
  */
 export async function saveB2BLead(leadData) {
+  if (isSupabaseEnabled()) {
+    try {
+      const baseUrl = CONFIG.SUPABASE_URL.replace(/\/$/, "");
+      await fetch(`${baseUrl}/rest/v1/b2b_leads`, {
+        method: "POST",
+        headers: getSupabaseHeaders({ Prefer: "return=minimal" }),
+        body: JSON.stringify({
+          company: leadData.company || "",
+          phone: leadData.phone || "",
+          quantity: leadData.quantity || "",
+          budget: leadData.budget || ""
+        })
+      });
+    } catch (err) {
+      console.warn("[dataService] Lỗi lưu B2B lead lên Supabase:", err);
+    }
+  }
+
   const list = safeGetStorage(CONFIG.STORAGE_KEYS.B2B_LEADS, []);
   const entry = {
     id: `b2b-${Date.now()}`,

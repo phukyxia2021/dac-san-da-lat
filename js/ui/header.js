@@ -134,8 +134,8 @@ function renderTopbarAndHeader(categories, cartCount) {
             <img
               src="${escapeHtml(CONFIG.LOGO_URL)}"
               alt="Logo Đặc sản Đà Lạt"
-              width="46"
-              height="46"
+              width="92"
+              height="92"
               class="brand-logo__img"
             />
             <div class="brand-logo__text">
@@ -243,9 +243,6 @@ function renderTopbarAndHeader(categories, cartCount) {
             <li class="header-nav__item"><a href="index.html" class="header-nav__link">Trang chủ</a></li>
             <li class="header-nav__item"><a href="about.html" class="header-nav__link">Về chúng tôi</a></li>
             <li class="header-nav__item"><a href="category.html?all=1" class="header-nav__link">Tất cả sản phẩm</a></li>
-            <li class="header-nav__item"><a href="category.html?cat=dac-san-chu-luc" class="header-nav__link">Hồng treo gió & Đồ sấy</a></li>
-            <li class="header-nav__item"><a href="category.html?cat=atiso-thao-duoc" class="header-nav__link">Atiso & Thảo dược</a></li>
-            <li class="header-nav__item"><a href="category.html?cat=qua-bieu" class="header-nav__link">🎁 Set Quà Biếu</a></li>
             <li class="header-nav__item"><a href="category.html?sale=1" class="header-nav__link" style="color:var(--color-sale);">🔥 Khuyến mãi</a></li>
             <li class="header-nav__item"><a href="blog.html" class="header-nav__link">Cẩm nang Đà Lạt</a></li>
             <li class="header-nav__item"><a href="#site-footer" class="header-nav__link">Liên hệ</a></li>
@@ -272,7 +269,6 @@ function renderTopbarAndHeader(categories, cartCount) {
             <a href="index.html">🏠 Trang chủ</a>
             <a href="about.html">🌿 Về chúng tôi</a>
             <a href="category.html?all=1" style="color:var(--color-primary);">🛍️ Xem tất cả sản phẩm (119)</a>
-            <a href="category.html?cat=qua-bieu" style="color:var(--color-accent);">🎁 Set Quà Biếu & Doanh Nghiệp</a>
             <a href="category.html?sale=1" style="color:var(--color-sale);">🔥 Khuyến mãi Flash Sale</a>
             <a href="blog.html">📖 Cẩm nang & Ẩm thực Đà Lạt</a>
             <a href="tel:${escapeHtml(CONFIG.HOTLINE)}" class="btn btn--primary btn--sm" style="margin-top:var(--space-2);">
@@ -489,7 +485,7 @@ function renderFooter(categories) {
           <!-- Khối 1: Thông tin thương hiệu & Liên hệ -->
           <div>
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:var(--space-4);">
-              <img src="${escapeHtml(CONFIG.LOGO_URL)}" alt="Logo Đặc sản Đà Lạt" width="48" height="48" style="width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--color-primary-light);" />
+              <img src="${escapeHtml(CONFIG.LOGO_URL)}" alt="Logo Đặc sản Đà Lạt" width="96" height="96" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--color-primary-light);" />
               <div>
                 <h2 style="font-family:var(--font-heading); font-size:1.3rem; color:#fff;">${escapeHtml(CONFIG.STORE_NAME)}</h2>
                 <p style="font-size:var(--fs-xs); color:var(--color-primary-light);">${escapeHtml(CONFIG.STORE_TAGLINE)}</p>

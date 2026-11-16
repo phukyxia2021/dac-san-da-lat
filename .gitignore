@@ -1,0 +1,7 @@
+# Bảo mật: Không đẩy file chứa mật khẩu DB / biến môi trường lên Git
+supabase.txt
+.env
+.env.*
+node_modules/
+.DS_Store
+Thumbs.db

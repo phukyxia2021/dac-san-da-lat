@@ -224,8 +224,8 @@
 }
 
 .brand-logo__img {
-  width: 46px;
-  height: 46px;
+  width: 92px;
+  height: 92px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--color-primary-light);
