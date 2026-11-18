@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await initGlobalLayout();
   initCartDrawer();
   initProductCardInteractions();
+  initInteractiveBanners();
 
   const pageType = document.body.dataset.page || "";
   if (pageType === "home") {
@@ -337,6 +338,7 @@ function initHeroSlider() {
     "touchstart",
     (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      slider.dataset.wasSwiping = "0";
       isPaused = true;
     },
     { passive: true }
@@ -347,6 +349,7 @@ function initHeroSlider() {
     (e) => {
       const diff = e.changedTouches[0].screenX - touchStartX;
       if (Math.abs(diff) > 40) {
+        slider.dataset.wasSwiping = "1";
         if (diff < 0) goToSlide(current + 1);
         else goToSlide(current - 1);
       }
@@ -356,6 +359,41 @@ function initHeroSlider() {
   );
 
   startAuto();
+}
+
+// Đổi màu các button trên Hero Banner khi người dùng click chuột vào banner
+function initInteractiveBanners() {
+  const TOTAL_THEMES = 5;
+  const heroBanners = document.querySelectorAll(".hero-slider");
+
+  heroBanners.forEach((banner) => {
+    if (!banner.hasAttribute("data-banner-btn-theme")) {
+      banner.dataset.bannerBtnTheme = "0";
+    }
+    if (!banner.getAttribute("title")) {
+      banner.setAttribute("title", "Click vào banner để đổi màu nút");
+    }
+
+    banner.addEventListener("click", (e) => {
+      // Không đổi màu khi người dùng bấm vào link, nút bấm hoặc thanh điều khiển slider
+      if (e.target.closest("a, button, input, select, textarea, label, .hero-slider__controls")) {
+        return;
+      }
+      // Không đổi màu khi vừa vuốt chuyển slide trên mobile
+      if (banner.dataset.wasSwiping === "1") {
+        banner.dataset.wasSwiping = "0";
+        return;
+      }
+      // Không đổi màu nếu người dùng đang bôi đen chữ
+      if (window.getSelection && window.getSelection().toString().trim().length > 0) {
+        return;
+      }
+
+      const currentTheme = parseInt(banner.dataset.bannerBtnTheme || "0", 10) || 0;
+      const nextTheme = (currentTheme + 1) % TOTAL_THEMES;
+      banner.dataset.bannerBtnTheme = String(nextTheme);
+    });
+  });
 }
 
 function initB2BQuoteForm() {

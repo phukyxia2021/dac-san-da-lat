@@ -243,7 +243,7 @@ function renderTopbarAndHeader(categories, cartCount) {
             <li class="header-nav__item"><a href="index.html" class="header-nav__link">Trang chủ</a></li>
             <li class="header-nav__item"><a href="about.html" class="header-nav__link">Về chúng tôi</a></li>
             <li class="header-nav__item"><a href="category.html?all=1" class="header-nav__link">Tất cả sản phẩm</a></li>
-            <li class="header-nav__item"><a href="category.html?sale=1" class="header-nav__link" style="color:var(--color-sale);">🔥 Khuyến mãi</a></li>
+            <li class="header-nav__item"><a href="category.html?sale=1" class="header-nav__link header-nav__link--sale">🔥 Khuyến mãi</a></li>
             <li class="header-nav__item"><a href="blog.html" class="header-nav__link">Cẩm nang Đà Lạt</a></li>
             <li class="header-nav__item"><a href="#site-footer" class="header-nav__link">Liên hệ</a></li>
           </ul>
@@ -265,12 +265,13 @@ function renderTopbarAndHeader(categories, cartCount) {
         </div>
         <div class="mobile-nav-drawer__body">
           ${mobileAccordionHtml}
-          <div style="margin-top:var(--space-4); display:flex; flex-direction:column; gap:12px; font-weight:600;">
-            <a href="index.html">🏠 Trang chủ</a>
-            <a href="about.html">🌿 Về chúng tôi</a>
-            <a href="category.html?all=1" style="color:var(--color-primary);">🛍️ Xem tất cả sản phẩm (119)</a>
-            <a href="category.html?sale=1" style="color:var(--color-sale);">🔥 Khuyến mãi Flash Sale</a>
-            <a href="blog.html">📖 Cẩm nang & Ẩm thực Đà Lạt</a>
+          <div style="margin-top:var(--space-4); display:flex; flex-direction:column; gap:6px; font-weight:600;">
+            <a href="index.html" class="mobile-nav-link">🏠 Trang chủ</a>
+            <a href="about.html" class="mobile-nav-link">🌿 Về chúng tôi</a>
+            <a href="category.html?all=1" class="mobile-nav-link" style="color:var(--color-primary);">🛍️ Xem tất cả sản phẩm (119)</a>
+            <a href="category.html?sale=1" class="mobile-nav-link" style="color:var(--color-sale);">🔥 Khuyến mãi Flash Sale</a>
+            <a href="blog.html" class="mobile-nav-link">📖 Cẩm nang & Ẩm thực Đà Lạt</a>
+            <a href="#site-footer" class="mobile-nav-link" data-action="close-mobile-nav">📞 Liên hệ</a>
             <a href="tel:${escapeHtml(CONFIG.HOTLINE)}" class="btn btn--primary btn--sm" style="margin-top:var(--space-2);">
               📞 Gọi Hotline: ${escapeHtml(CONFIG.HOTLINE_DISPLAY)}
             </a>
@@ -282,6 +283,7 @@ function renderTopbarAndHeader(categories, cartCount) {
 
   initTopbarCarousel();
   initHeaderScrollAndMobileMenu();
+  initHeaderClickHighlight();
   initSmartSearch();
 }
 
@@ -364,6 +366,88 @@ function initHeaderScrollAndMobileMenu() {
       searchInput?.focus();
     }
   });
+}
+
+function initHeaderClickHighlight() {
+  const STORAGE_KEY = "dld_active_header_nav";
+  const header = document.getElementById("site-header");
+  const mobileDrawer = document.getElementById("mobile-nav-drawer");
+  if (!header) return;
+
+  const navLinks = [
+    ...header.querySelectorAll(".header-nav__link"),
+    ...(mobileDrawer ? mobileDrawer.querySelectorAll(".mobile-nav-link") : [])
+  ];
+  const brandLogo = header.querySelector(".brand-logo");
+
+  function setActiveByHref(targetHref) {
+    navLinks.forEach((link) => {
+      const matched = targetHref && link.getAttribute("href") === targetHref;
+      link.classList.toggle("is-active", Boolean(matched));
+      link.classList.toggle("is-clicked", Boolean(matched));
+    });
+  }
+
+  function resolveCurrentPageHref() {
+    const path = window.location.pathname.split("/").pop() || "index.html";
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash;
+
+    if (hash === "#site-footer") return "#site-footer";
+    if (path === "about.html") return "about.html";
+    if (path === "blog.html" || path === "blog-post.html") return "blog.html";
+    if (path === "category.html") {
+      if (params.get("sale") === "1") return "category.html?sale=1";
+      if (params.get("all") === "1") return "category.html?all=1";
+      return "category.html";
+    }
+    if (path === "index.html" || path === "") return "index.html";
+    return "";
+  }
+
+  // Khôi phục trạng thái màu xanh nhạt cho mục header tương ứng sau khi click chuyển trang
+  let savedHref = "";
+  try {
+    savedHref = sessionStorage.getItem(STORAGE_KEY) || "";
+  } catch {
+    savedHref = "";
+  }
+
+  const currentHref = resolveCurrentPageHref();
+  if (savedHref && savedHref === currentHref) {
+    setActiveByHref(savedHref);
+  } else if (currentHref && currentHref !== "index.html") {
+    setActiveByHref(currentHref);
+  }
+
+  // Khi click chuột vào bất kỳ mục nào trong header nav thì khu vực xung quanh mục đó đổi sang màu xanh nhạt ngay lập tức
+  navLinks.forEach((link) => {
+    const activateLink = () => {
+      const href = link.getAttribute("href") || "";
+      setActiveByHref(href);
+      try {
+        sessionStorage.setItem(STORAGE_KEY, href);
+      } catch {
+        // ignore
+      }
+    };
+
+    link.addEventListener("pointerdown", activateLink);
+    link.addEventListener("click", activateLink);
+  });
+
+  if (brandLogo) {
+    const activateBrand = () => {
+      brandLogo.classList.add("is-clicked");
+      try {
+        sessionStorage.setItem(STORAGE_KEY, "index.html");
+      } catch {
+        // ignore
+      }
+    };
+    brandLogo.addEventListener("pointerdown", activateBrand);
+    brandLogo.addEventListener("click", activateBrand);
+  }
 }
 
 function initSmartSearch() {

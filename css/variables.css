@@ -28,6 +28,18 @@
   --color-error: #B91C1C;
   --color-error-bg: #FEE2E2;
 
+  /* Bảng màu đổi chủ đề Button trên Banner khi click (Cảm hứng Đà Lạt) */
+  --color-banner-amber: #B45309;
+  --color-banner-amber-dark: #7C2D12;
+  --color-banner-berry-dark: #881337;
+  --color-banner-berry-light: #FFE4E6;
+  --color-banner-lavender: #6D28D9;
+  --color-banner-lavender-dark: #3B1D5E;
+  --color-banner-lavender-light: #EDE9FE;
+  --color-banner-mist: #1D4ED8;
+  --color-banner-mist-dark: #1E3A5F;
+  --color-banner-mist-light: #DBEAFE;
+
   /* Typography */
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
